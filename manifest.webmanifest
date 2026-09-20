@@ -1,0 +1,9 @@
+{
+  "name": "AIF-C01: Exam Reviewer",
+  "short_name": "AIF-C01 Reviewer",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#081423",
+  "theme_color": "#081423",
+  "description": "AWS Certified AI Practitioner AIF-C01 practice reviewer."
+}
