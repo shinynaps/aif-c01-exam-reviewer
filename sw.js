@@ -1,5 +1,5 @@
-const CACHE = 'aif-c01-reviewer-v1';
-const ASSETS = ['./', './index.html', './manifest.webmanifest'];
+const CACHE = 'aif-c01-reviewer-v2';
+const ASSETS = ['./', './index.html', './mock-exam-1.js', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
