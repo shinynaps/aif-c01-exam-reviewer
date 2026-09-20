@@ -1,4 +1,5 @@
 (() => {
+  window.aifExamData = window.aifExamData || {};
   const letters = i => String.fromCharCode(65 + i);
   const conceptReason = (option, clue) => {
     const s = String(option);
@@ -516,7 +517,7 @@
       "New text/image/code/audio content → generative AI; labels, groups, and numeric forecasts → traditional ML.")
   ];
 
-  window.mockExam1 = {
+  window.aifExamData.mockExam1 = {
     id: "mock-exam-1",
     kind: "mock",
     title: "Mock Exam 1",
