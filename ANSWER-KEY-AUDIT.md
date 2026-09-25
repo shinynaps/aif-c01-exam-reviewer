@@ -125,6 +125,10 @@ Important distinction for study:
 Official Bedrock reference:
 https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-tasks-text-summary.html
 
+**Question 34 — responsible AI transparency hotspot**
+
+The original source said "provide explainable decisions" but did not offer **Explainability** as a selectable characteristic. AWS treats Explainability and Transparency as distinct responsible-AI dimensions. The audited row now explicitly tests **decision transparency**, so **Transparency** is unambiguous.
+
 **Question 41 — AWS Artifact wording**
 
 The source asked about a company "generating reports to show adherence," which could imply AWS Audit Manager. Because the offered answer is AWS Artifact, the audited wording now correctly asks for **AWS compliance reports and certifications**.
