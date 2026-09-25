@@ -153,11 +153,11 @@
       "company managed encryption key",
       "Encryption keys → AWS KMS."),
 
-    q("A company wants to use large language models (LLMs) to produce code from natural language code comments. Which LLM feature meets these requirements?",
+    q("An LLM receives a natural-language code comment as an input prefix and should continue the sequence by generating the code that follows. Which LLM capability BEST describes this behavior?",
       ["Text summarization","Text generation","Text completion","Text classification"],[2],
-      "Natural-language comments can act as the beginning/context of a sequence that the LLM completes with code, making text completion the best fit among the choices.",
-      "produce code that continues from a natural-language comment",
-      "When the prompt is a prefix/comment and the model should continue it with code, think completion."),
+      "Text completion continues an input prefix with likely subsequent tokens. In this scenario, the natural-language comment acts as the prefix and the generated code is the continuation.",
+      "continue an input prefix with generated code",
+      "Prefix provided + model continues the sequence → text completion. Code generation is the broader use case."),
 
     q("A company is introducing a mobile app that helps users learn foreign languages. The app makes text more coherent by calling a large language model (LLM). The company collected a diverse dataset of text and supplemented the dataset with examples of more readable versions. The company wants the LLM output to resemble the provided examples. Which metric should the company use to assess whether the LLM meets these requirements?",
       ["Value of the loss function","Semantic robustness","Recall-Oriented Understudy for Gisting Evaluation (ROUGE) score","Latency of the text generation"],[2],
@@ -171,8 +171,8 @@
       "decrease unwanted image content through prompting",
       "Image generation + exclude unwanted elements → negative prompt."),
 
-    q("A company wants to use a large language model (LLM) to generate concise, feature-specific descriptions for the company’s products. Which prompt engineering technique meets these requirements?",
-      ["Create one prompt that covers all products. Edit the responses to make the responses more specific, concise, and tailored to each product.","Create prompts for each product category that highlight the key features. Include the desired output format and length for each prompt response.","Include a diverse range of product features in each prompt to generate creative and unique descriptions.","Provide detailed, product-specific prompts to ensure precise and customized descriptions."],[1],
+    q("A company wants an LLM to generate concise, feature-specific product descriptions in a consistent format and length. Which prompt design BEST follows AWS prompt-engineering best practices?",
+      ["Create one generic prompt for all products and manually edit every response afterward.","Create prompts for each product category that highlight the key features. Include the desired output format and length for each prompt response.","Ask the model to be creative without specifying which product features or output constraints matter.","Provide only the product name and ask the model to decide the format and length on its own."],[1],
       "Category-specific prompts that state the relevant features plus desired format and length directly constrain the response to be concise and feature-focused while remaining reusable.",
       "concise + feature-specific + desired format/length",
       "Strong prompts explicitly state the task, relevant context, and output constraints."),
@@ -382,11 +382,11 @@
       "find groups of similar customers",
       "Grouping/segmentation without labels → clustering → K-means."),
 
-    q("A company’s large language model (LLM) is experiencing hallucinations. How can the company decrease hallucinations?",
+    q("A company’s large language model (LLM) is producing variable, unsupported responses. Among the following options, which inference-parameter change can help reduce this behavior?",
       ["Set up Agents for Amazon Bedrock to supervise the model training.","Use data pre-processing and remove any data that causes hallucinations.","Decrease the temperature inference parameter for the model.","Use a foundation model (FM) that is trained to not hallucinate."],[2],
-      "Lower temperature reduces randomness and makes the model choose more probable tokens, which can reduce unsupported or erratic outputs.",
-      "reduce hallucinations via an inference setting",
-      "Among inference parameters, lower temperature is the direct clue for more deterministic output."),
+      "Lower temperature reduces sampling randomness and makes the model favor higher-probability tokens, which can reduce variability and some unsupported outputs. For factual grounding against trusted or current data, RAG is generally a stronger control when it is available as an option.",
+      "reduce unsupported variability via an inference setting",
+      "If the question specifically asks for an inference-parameter mitigation, lower temperature. If it asks for factual grounding in trusted/current data, prefer RAG."),
 
     q("A company wants to develop an educational game where users answer questions such as the following: “A jar contains six red, four green, and three yellow marbles. What is the probability of choosing a green marble from the jar?” Which solution meets these requirements with the LEAST operational overhead?",
       ["Use supervised learning to create a regression model that will predict probability.","Use reinforcement learning to train a model to return the probability.","Use code that will calculate probability by using simple rules and computations.","Use unsupervised learning to create a model that will estimate probability density."],[2],
