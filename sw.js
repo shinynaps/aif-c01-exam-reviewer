@@ -1,4 +1,4 @@
-const CACHE = 'aif-c01-reviewer-v6';
+const CACHE = 'aif-c01-reviewer-v7';
 const ASSETS = ['./', './index.html', './exams/domain-1.js', './exams/domain-2.js', './exams/domain-3.js', './exams/domain-4.js', './exams/domain-5.js', './exams/mock-exam-1.js', './exams/mock-exam-2.js', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
