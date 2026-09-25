@@ -1113,6 +1113,7 @@ body:before{
 <script src="./exams/domain-4.js"></script>
 <script src="./exams/domain-5.js"></script>
 <script src="./exams/mock-exam-1.js"></script>
+<script src="./exams/mock-exam-2.js"></script>
 <script>
 const domains=[
   window.aifExamData.domain1,
@@ -1120,7 +1121,8 @@ const domains=[
   window.aifExamData.domain3,
   window.aifExamData.domain4,
   window.aifExamData.domain5,
-  window.aifExamData.mockExam1
+  window.aifExamData.mockExam1,
+  window.aifExamData.mockExam2
 ];
 const state={domain:null,index:0,answers:[],flags:[],remaining:0,timerId:null,instantFeedback:true};
 const landing=document.getElementById('landing'),exam=document.getElementById('exam'),results=document.getElementById('results'),grid=document.getElementById('domainGrid'),examTitle=document.getElementById('examTitle'),examMeta=document.getElementById('examMeta'),timer=document.getElementById('timer'),qLabel=document.getElementById('questionLabel'),qText=document.getElementById('questionText'),options=document.getElementById('options'),selectNote=document.getElementById('selectNote'),palette=document.getElementById('palette'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),flagBtn=document.getElementById('flagBtn'),submitBtn=document.getElementById('submitBtn'),instantFeedbackToggle=document.getElementById('instantFeedbackToggle'),instantFeedback=document.getElementById('instantFeedback'),submitReviewPanel=document.getElementById('submitReviewPanel'),reviewSummary=document.getElementById('reviewSummary'),reviewPalette=document.getElementById('reviewPalette'),returnToExam=document.getElementById('returnToExam'),confirmSubmit=document.getElementById('confirmSubmit');
@@ -1139,7 +1141,8 @@ const domainDescriptions={
   3:'Apply foundation models through prompt engineering, RAG, customization, model selection, and evaluation techniques.',
   4:'Recognize fairness, transparency, explainability, safety, inclusivity, and other responsible AI considerations.',
   5:'Review AI security controls, data protection, governance, compliance, auditability, and AWS security services.',
-  'mock-exam-1':'A full-length mixed-domain AIF-C01 practice exam using the imported 65-question source set.'
+  'mock-exam-1':'A full-length mixed-domain AIF-C01 practice exam using the imported 65-question source set.',
+  'mock-exam-2':'A second full-length 65-question AIF-C01 practice exam with detailed answer explanations and exam clues.'
 };
 const domainIcons={
   1:`<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="17" r="2"/><path d="M7.7 8.1 10.6 15M16.3 8.1 13.4 15M8 7h8"/></svg>`,
@@ -1147,7 +1150,8 @@ const domainIcons={
   3:`<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m12 3 8 4-8 4-8-4 8-4Z"/><path d="m4 12 8 4 8-4"/><path d="m4 17 8 4 8-4"/></svg>`,
   4:`<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3 5 6v5c0 4.7 2.8 8 7 10 4.2-2 7-5.3 7-10V6l-7-3Z"/><path d="M8.5 12h7M12 8.5v7"/></svg>`,
   5:`<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg>`,
-  'mock-exam-1':`<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/><path d="m16.5 15.5 1.2 1.2 2.3-2.8"/></svg>`
+  'mock-exam-1':`<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/><path d="m16.5 15.5 1.2 1.2 2.3-2.8"/></svg>`,
+  'mock-exam-2':`<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/><path d="m16.5 15.5 1.2 1.2 2.3-2.8"/></svg>`
 };
 domains.forEach(d=>{
   const b=document.createElement('button');
