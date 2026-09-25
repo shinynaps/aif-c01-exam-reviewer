@@ -24,3 +24,7 @@ Your site will then be available at:
 - `.nojekyll` — disables Jekyll processing
 
 The reviewer stores local preferences in the browser using localStorage.
+
+## Answer-key audit
+
+The current 255-question reviewer was audited on **2026-09-25** against the current AWS Certified AI Practitioner (AIF-C01) exam guide and relevant official AWS documentation. See [ANSWER-KEY-AUDIT.md](./ANSWER-KEY-AUDIT.md) for scope, corrections, and source notes.
