@@ -339,10 +339,10 @@
       "Foundation models via managed API → Amazon Bedrock."),
 
     q("A company is building a mobile app for users who have a visual impairment. The app must be able to hear what users say and provide voice responses. Which solution will meet these requirements?",
-      ["Use a deep learning neural network to perform speech recognition.","Build ML models to search for patterns in numeric data.","Use generative AI summarization to generate human-like text.","Build custom models for image classification and recognition."],[0],
-      "Among the choices, speech recognition is the capability required to interpret spoken input; a complete voice assistant would pair speech-to-text with text-to-speech for responses.",
-      "spoken input and voice interaction",
-      "Speech input → speech recognition/Transcribe; spoken output would use text-to-speech such as Polly."),
+      ["Use Amazon Transcribe for speech-to-text and Amazon Polly for text-to-speech.","Build ML models to search for patterns in numeric data.","Use generative AI summarization to generate human-like text.","Build custom models for image classification and recognition."],[0],
+      "Amazon Transcribe converts spoken audio to text, while Amazon Polly converts text back into natural-sounding speech. Together they satisfy both sides of a voice interface.",
+      "hear what users say + provide voice responses",
+      "Speech → text = Transcribe. Text → speech = Polly."),
 
     q("A company wants to enhance response quality for a large language model (LLM) for complex problem-solving tasks. The tasks require detailed reasoning and a step-by-step explanation process. Which prompt engineering technique meets these requirements?",
       ["Few-shot prompting","Zero-shot prompting","Directional stimulus prompting","Chain-of-thought prompting"],[3],
@@ -484,13 +484,12 @@
       "After deployment + drift monitoring → SageMaker Model Monitor."),
 
     q("A company is deploying AI/ML models by using AWS services. The company wants to offer transparency into the models’ decision-making processes and provide explanations for the model outputs. Which AWS service or feature meets these requirements?",
-      ["Amazon SageMaker Model Cards","Amazon Rekognition","Amazon Comprehend","Amazon Lex"],[0],
-      "Among the listed choices, SageMaker Model Cards are the governance artifact that documents model purpose, performance, risk, and intended use to improve transparency. For per-prediction feature attribution, SageMaker Clarify would be the more direct service, but it is not offered here.",
-      "transparency and explanation documentation",
-      "Model Cards = standardized transparency documentation; Clarify = direct bias/explainability when available as an option.",
-      {contrast:"This item is somewhat imprecise because SageMaker Clarify is the AWS feature normally associated with explaining individual model predictions."}),
+      ["Amazon SageMaker Clarify","Amazon Rekognition","Amazon Comprehend","Amazon Lex"],[0],
+      "SageMaker Clarify is the AWS feature designed to help explain model predictions, including feature-attribution methods such as SHAP, and to analyze bias.",
+      "provide explanations for model outputs",
+      "Explain individual model predictions → SageMaker Clarify. Document model purpose/limitations → Model Cards."),
 
-    q("A manufacturing company wants to create product descriptions in multiple languages. Which AWS service will automate this task?",
+    q("A manufacturing company already has product descriptions and wants to translate them into multiple languages. Which AWS service will automate this task?",
       ["Amazon Translate","Amazon Transcribe","Amazon Kendra","Amazon Polly"],[0],
       "Amazon Translate provides managed neural machine translation for text between supported languages.",
       "multiple languages",
@@ -504,7 +503,7 @@
       "labeled task vs scarce labeled data vs unlabeled domain data",
       "New task with labels → fine-tune; too little labeled data → augment; only unlabeled domain data → continued pre-training."),
 
-    q("Which AWS feature records details about ML instance data for governance and reporting?",
+    q("Which AWS feature records details about ML models for governance and reporting?",
       ["Amazon SageMaker Model Cards","Amazon SageMaker Debugger","Amazon SageMaker Model Monitor","Amazon SageMaker JumpStart"],[0],
       "SageMaker Model Cards record standardized details about models for governance, documentation, and reporting.",
       "governance and reporting documentation",
