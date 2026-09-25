@@ -55,12 +55,24 @@ All 255 questions pass structural validation after the audit.
 
 ### Mock Exam 1
 
+**Question 8 — text completion vs broader text generation**
+
+The source wording made both "text generation" and "text completion" defensible. The audited wording now explicitly describes continuing an input prefix, making **text completion** the single best answer.
+
+**Question 11 — prompt specificity**
+
+Two source choices described reasonable forms of specific prompting. The distractors were tightened so the keyed answer uniquely reflects the AWS prompt-engineering best practices of specificity, relevant context, and explicit output constraints.
+
 **Question 38 — voice assistant**
 
 The original source asked for both spoken input and spoken output but keyed only a generic speech-recognition choice. The audited version now uses:
 
 - Amazon Transcribe for speech-to-text
 - Amazon Polly for text-to-speech
+
+**Question 45 — hallucination/inference parameter**
+
+The keyed answer remains **lower temperature** because the question now explicitly asks for an inference-parameter mitigation. The explanation also distinguishes this from **RAG**, which is generally the stronger answer when the requirement is factual grounding against trusted or current data.
 
 **Question 61 — model-output explainability**
 
@@ -79,6 +91,10 @@ The source phrase "ML instance data" was misleading. It has been corrected to **
 
 ### Mock Exam 2
 
+**Question 1 — medical NLP wording**
+
+The source referred to "structured patient records" while keying Amazon Comprehend Medical, which is a clinical-text NLP service. The audited wording now specifies patient records containing clinical text.
+
 **Question 2 — embeddings**
 
 The source described embeddings as a representation in a "reduced dimensionality space." That wording is misleading because embeddings are often high-dimensional. The audited choice now states that embeddings are **numerical vector representations that capture semantic relationships**.
@@ -86,6 +102,14 @@ The source described embeddings as a representation in a "reduced dimensionality
 **Question 10 — prompt-engineering security risk**
 
 The source mixed a prompt-specific security risk with broader model limitations, leaving more than one defensible statement. The audited version now explicitly asks for a **security risk introduced through the prompt interface**, making **prompt injection** unambiguous.
+
+**Question 30 — federated learning wording**
+
+The source said federated learning "ensures" compliance and privacy. That is too absolute. The audited wording now asks which technique **helps preserve privacy by avoiding centralization of raw training data**, which accurately describes federated learning.
+
+**Question 31 — continued pre-training hotspot**
+
+The "specific documents" row was clarified to state that the company uses additional **unlabeled domain documents as training data**, avoiding confusion with RAG.
 
 **Question 43 — summarization metric**
 
@@ -100,6 +124,10 @@ Important distinction for study:
 
 Official Bedrock reference:
 https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-tasks-text-summary.html
+
+**Question 41 — AWS Artifact wording**
+
+The source asked about a company "generating reports to show adherence," which could imply AWS Audit Manager. Because the offered answer is AWS Artifact, the audited wording now correctly asks for **AWS compliance reports and certifications**.
 
 **Question 49 — discriminatory/hateful content**
 
