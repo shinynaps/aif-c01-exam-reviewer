@@ -25,10 +25,12 @@ The supplied material had no answer key in the message. The 65 answers were dete
 
 - **2:** Scoped the privacy question to **training-data exposure**. Removing PII before fine-tuning is the best answer to that requirement; Bedrock Guardrails sensitive-information filters remain useful for runtime outputs.
 - **8:** Named JumpStart's **private curated model hub**, the actual mechanism for an approved discoverable model catalog. [AWS reference](https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs.html).
+- **12:** Clarified disclosure of AI's role in hiring so **transparency** is distinct from the separate explainability dimension.
 - **13:** Specified a metric balancing precision and recall, so F1 is clearly preferred for churn classification.
 - **15:** Transcribed the attached hotspot: model versions → **Model Registry**; predictions → **Serverless Inference**. [AWS reference](https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html).
 - **19:** Asked for **semantic similarity despite wording differences**. BERTScore does not directly measure a teenager's preferred writing style.
 - **26:** Replaced a weak prompt-template-only answer with the Bedrock Guardrails **prompt-attack filter**. No prompt template alone ensures protection. [AWS reference](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html).
+- **27:** Asked for an explicit **feature-split decision path**, making a decision tree distinct from an interpretable multiclass logistic regression model.
 - **29:** Specified locating **each** animal so object detection is distinct from whole-image classification.
 - **37, 42:** Scoped SageMaker Clarify questions to **existing customers**. AWS says Clarify is closed to new customers and documents replacement approaches. [AWS reference](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-availability-change.html).
 - **40:** Added evidence of undertraining and validation improvement. Extra epochs **may** help; they do not guarantee an accuracy target.

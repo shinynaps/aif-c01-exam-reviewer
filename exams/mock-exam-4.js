@@ -106,7 +106,7 @@
       'human labeling of training images','Ground Truth = data labels; Canvas = no-code model building.',
       ['', 'Canvas focuses on no-code ML development and prediction, not managed annotation jobs.','The playground experiments with foundation-model prompts.','Agents orchestrate model steps and actions, not labeling workforces.'],1],
     // 12 — source 142
-    ['A company uses AI in recruitment and wants to reduce discriminatory outcomes and explain hiring decisions. Which responsible-AI dimensions are most relevant? (Choose two.)',
+    ['A company uses AI in recruitment and wants to reduce discriminatory outcomes and disclose how AI informs hiring decisions. Which responsible-AI dimensions are most relevant? (Choose two.)',
       ['Fairness','Tolerance','Flexibility','Open source','Transparency'],[0,4],
       'Fairness addresses inequitable outcomes across groups. Transparency makes the model’s use and decision process understandable to stakeholders; explainability is related but is not an offered choice.',
       'equitable hiring + explain decisions','Fairness = equitable outcomes; transparency = understandable process and disclosure.',
@@ -200,7 +200,7 @@
       ['', 'Temperature changes sampling randomness rather than filtering attacks.','Catalog membership does not establish prompt-injection resistance.','Shorter inputs can still contain attacks and may discard useful context.'],5,
       'https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html'],
     // 27 — source 157
-    ['A company must categorize gene records into 20 groups and explain how input attributes lead to each category. Which algorithm is the most interpretable of the options?',
+    ['A company must categorize gene records into 20 groups and document the explicit feature-split path leading to each prediction. Which algorithm supports that decision path most directly?',
       ['Decision trees','Linear regression','Logistic regression','Neural networks'],[0],
       'A decision tree follows explicit feature-based splits to a class, so its path can be inspected for a particular prediction. A shallow tree is especially interpretable; a very large tree can still be hard to explain.',
       '20 categories + inspect decision path','Explainable classification path → decision tree.',
