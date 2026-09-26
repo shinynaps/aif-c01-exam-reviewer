@@ -1114,6 +1114,7 @@ body:before{
 <script src="./exams/domain-5.js"></script>
 <script src="./exams/mock-exam-1.js"></script>
 <script src="./exams/mock-exam-2.js"></script>
+<script src="./exams/mock-exam-3.js"></script>
 <script>
 const domains=[
   window.aifExamData.domain1,
@@ -1122,7 +1123,8 @@ const domains=[
   window.aifExamData.domain4,
   window.aifExamData.domain5,
   window.aifExamData.mockExam1,
-  window.aifExamData.mockExam2
+  window.aifExamData.mockExam2,
+  window.aifExamData.mockExam3
 ];
 const state={domain:null,index:0,answers:[],flags:[],remaining:0,timerId:null,instantFeedback:true};
 const landing=document.getElementById('landing'),exam=document.getElementById('exam'),results=document.getElementById('results'),grid=document.getElementById('domainGrid'),examTitle=document.getElementById('examTitle'),examMeta=document.getElementById('examMeta'),timer=document.getElementById('timer'),qLabel=document.getElementById('questionLabel'),qText=document.getElementById('questionText'),options=document.getElementById('options'),selectNote=document.getElementById('selectNote'),palette=document.getElementById('palette'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),flagBtn=document.getElementById('flagBtn'),submitBtn=document.getElementById('submitBtn'),instantFeedbackToggle=document.getElementById('instantFeedbackToggle'),instantFeedback=document.getElementById('instantFeedback'),submitReviewPanel=document.getElementById('submitReviewPanel'),reviewSummary=document.getElementById('reviewSummary'),reviewPalette=document.getElementById('reviewPalette'),returnToExam=document.getElementById('returnToExam'),confirmSubmit=document.getElementById('confirmSubmit');
