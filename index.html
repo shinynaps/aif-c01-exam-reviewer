@@ -944,6 +944,9 @@ body:before{
 .response-status{width:fit-content;margin:0 0 10px;font-size:.9rem;font-weight:850}
 .response-good{color:var(--green)}
 .response-wrong{color:#ff9b9b}
+.feedback-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+.feedback-top .response-status{flex:1 1 250px;margin:0}
+.feedback-next{margin-left:auto;white-space:nowrap}
 
 .answer-review{
   max-width:820px;
@@ -1354,7 +1357,9 @@ function renderInstantFeedback(){
   const status=ok
     ? `<div class="response-status response-good">✓ Correct</div>`
     : `<div class="response-status response-wrong">✕ Your answer: ${esc(selected)}</div>`;
-  instantFeedback.innerHTML=`${status}${renderExplanation(q,a)}`;
+  const nextLabel=state.index===state.domain.questions.length-1?'Review and Submit':'Next';
+  instantFeedback.innerHTML=`<div class="feedback-top">${status}<button class="btn primary feedback-next" id="feedbackNextBtn" type="button">${nextLabel} →</button></div>${renderExplanation(q,a)}`;
+  document.getElementById('feedbackNextBtn').addEventListener('click',goNext);
 }
 function choose(i){
   const q=state.domain.questions[state.index],a=state.answers[state.index];
@@ -1369,7 +1374,8 @@ function choose(i){
 }
 function renderPalette(){palette.innerHTML='';state.domain.questions.forEach((q,i)=>{const b=document.createElement('button');b.className='navq'+(isAnswered(q,state.answers[i])?' answered':'')+(i===state.index?' current':'')+(state.flags[i]?' flagged':'');b.textContent=i+1;b.addEventListener('click',()=>{state.index=i;renderQuestion()});palette.appendChild(b)})}
 prevBtn.addEventListener('click',()=>{if(state.index>0){state.index--;renderQuestion()}});
-nextBtn.addEventListener('click',()=>{if(state.index<state.domain.questions.length-1){state.index++;renderQuestion()}else{openSubmitReview()}});
+function goNext(){if(state.index<state.domain.questions.length-1){state.index++;renderQuestion()}else{openSubmitReview()}}
+nextBtn.addEventListener('click',goNext);
 flagBtn.addEventListener('click',()=>{state.flags[state.index]=!state.flags[state.index];renderQuestion()});
 submitBtn.addEventListener('click',openSubmitReview);
 
