@@ -1,11 +1,57 @@
 # AIF-C01 Answer-Key Audit
 
+## Current inventory and later additions — 2026-09-27
+
+The original 2026-09-25 audit below covered **255** questions. Since then, Mock Exams 3 and 4 were added. The current loaded inventory is:
+
+| Question set | Questions |
+|---|---:|
+| Domain 1 practice | 25 |
+| Domain 2 practice | 25 |
+| Domain 3 practice | 25 |
+| Domain 4 practice | 25 |
+| Domain 5 practice | 25 |
+| Mock Exam 1 | 65 |
+| Mock Exam 2 | 65 |
+| Mock Exam 3 | 65 |
+| Mock Exam 4 | 65 |
+| **Current total** | **385** |
+
+This later check loaded all nine JavaScript sets, counted their records, checked answer indexes and matching maps, and reviewed the new Mock Exam 4 explanations and source-sensitive answer wording. It does **not** retroactively extend every individual technical claim in the 2026-09-25 audit to Mock Exam 3 or 4. Mock Exam 3's 65 records loaded and its missing landing-card metadata and service-worker asset entry were added. Mock Exam 4 has 60 single-answer, 4 multiple-response, and 1 matching question. Its source collection's questions 131–195 are displayed as **1–65** in this reviewer.
+
+### Mock Exam 4 answer and wording review
+
+The supplied material had no answer key in the message. The 65 answers were determined from the scenarios and the official references where AWS behavior was material; no supplied answer was changed. The following items were adjusted to remove ambiguities or out-of-date assumptions (numbered as displayed in the reviewer):
+
+- **2:** Scoped the privacy question to **training-data exposure**. Removing PII before fine-tuning is the best answer to that requirement; Bedrock Guardrails sensitive-information filters remain useful for runtime outputs.
+- **8:** Named JumpStart's **private curated model hub**, the actual mechanism for an approved discoverable model catalog. [AWS reference](https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-curated-hubs.html).
+- **13:** Specified a metric balancing precision and recall, so F1 is clearly preferred for churn classification.
+- **15:** Transcribed the attached hotspot: model versions → **Model Registry**; predictions → **Serverless Inference**. [AWS reference](https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html).
+- **19:** Asked for **semantic similarity despite wording differences**. BERTScore does not directly measure a teenager's preferred writing style.
+- **26:** Replaced a weak prompt-template-only answer with the Bedrock Guardrails **prompt-attack filter**. No prompt template alone ensures protection. [AWS reference](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html).
+- **29:** Specified locating **each** animal so object detection is distinct from whole-image classification.
+- **37, 42:** Scoped SageMaker Clarify questions to **existing customers**. AWS says Clarify is closed to new customers and documents replacement approaches. [AWS reference](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-availability-change.html).
+- **40:** Added evidence of undertraining and validation improvement. Extra epochs **may** help; they do not guarantee an accuracy target.
+- **43:** Specified a small training sample and unseen-data degradation, supporting more representative training data as a remedy for overfitting.
+- **50:** Scoped the custom Bedrock model to one **not eligible for on-demand deployment**. Provisioned Throughput is not universally required for newer eligible custom models. [AWS reference](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html).
+- **53:** Replaced an unsupported universal claim of the “least environmental effect” with Trainium's purpose-built training-efficiency use case. Actual footprint must be measured per workload.
+- **57:** Identified **underrepresentation in the training sample**, making sampling bias rather than other causes the single best answer.
+- **58:** Specified a reward-based **retraining** loop. A deployed chatbot does not learn autonomously from every interaction.
+- **61:** Replaced a generic “moderation APIs” answer with Bedrock Guardrails **image content filters**. [AWS reference](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-mmfilter.html).
+- **65:** Clarified that retrieval already works; the remaining problem is persistent specialized terminology. The explanation also distinguishes domain adaptation from retrieving current research facts.
+
+Additional official checks included [Bedrock input/output handling](https://docs.aws.amazon.com/bedrock/latest/userguide/data-retention.html), [Artifact report notifications](https://docs.aws.amazon.com/artifact/latest/ug/managing-notifications.html), and [SageMaker Asynchronous Inference's payload and processing limits](https://docs.aws.amazon.com/sagemaker/latest/dg/async-inference.html). The source is user-provided ExamPrepper practice material, adapted and reviewed. It is not represented as an official AWS exam or a leaked live-question set.
+
+---
+
+## Original audit — 2026-09-25
+
 **Audit date:** 2026-09-25  
 **Exam guide baseline:** AWS Certified AI Practitioner (AIF-C01), Exam Guide version 1.1 (published 2026-04-30)
 
 ## Scope
 
-This audit covers every question currently shipped by the reviewer:
+At that date, this audit covered every question then shipped by the reviewer:
 
 | Question set | Questions |
 |---|---:|
@@ -40,7 +86,7 @@ Official references:
 - Current exam guide: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html
 - Exam guide revisions: https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/aif-01-revisions.html
 
-## Audit result
+## Original audit result
 
 All 255 questions pass structural validation after the audit.
 
@@ -168,7 +214,7 @@ https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-content-filters.
 
 ## Current-guide coverage
 
-The reviewer was checked against the current v1.1 guide rather than an older AIF-C01 outline. The present guide includes newer topics represented in the reviewer, including agentic AI, asynchronous/serverless inference, Amazon Quick, Kiro, Strands Agents, Amazon Bedrock AgentCore, model distillation, and Amazon Bedrock Prompt Management.
+At the time of the original audit, the reviewer was checked against the v1.1 guide rather than an older AIF-C01 outline. That guide included topics represented in the reviewer, including agentic AI, asynchronous/serverless inference, Amazon Quick, Kiro, Strands Agents, Amazon Bedrock AgentCore, model distillation, and Amazon Bedrock Prompt Management.
 
 Official revisions:
 https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/aif-01-revisions.html
