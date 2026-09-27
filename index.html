@@ -1,1132 +1,36 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIF-C01 Domain Test Exams</title><style>
-:root{--navy:#0f1b2d;--navy2:#15263d;--card:#1b2e48;--line:#35506f;--text:#f5f7fb;--muted:#aebbd0;--orange:#ff9900;--orange2:#ffb84d;--cyan:#58d5de;--green:#35d07f;--red:#ff6b6b;--yellow:#ffd166}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 90% 8%,rgba(88,213,222,.08),transparent 22rem),radial-gradient(circle at 8% 8%,rgba(255,153,0,.06),transparent 20rem),var(--navy);color:var(--text);line-height:1.5}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:78px 78px}button{font:inherit}.hidden{display:none!important}.shell{max-width:1180px;margin:auto;padding:28px 20px 60px}.brand{display:flex;align-items:center;gap:14px;margin-bottom:26px}.planet{width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,var(--orange2),var(--orange));position:relative;box-shadow:inset -8px -7px rgba(0,0,0,.14)}.planet:after{content:"";position:absolute;left:-11px;right:-11px;top:21px;height:12px;border:4px solid var(--cyan);border-radius:50%;transform:rotate(-12deg)}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(1.8rem,4vw,2.7rem);margin-bottom:3px;letter-spacing:-.03em}.muted{color:var(--muted)}.hero{padding:24px 0 10px}.hero p{max-width:780px}.domain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:20px}.domain-card{background:linear-gradient(180deg,var(--card),#182941);border:1px solid var(--line);border-radius:16px;padding:19px;text-align:left;color:var(--text);cursor:pointer;min-height:170px;transition:.16s ease}.domain-card:hover{transform:translateY(-2px);border-color:#52769f}.domain-card .num{color:var(--orange2);font-weight:900;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.domain-card h3{margin:7px 0 5px;font-size:1.18rem}.weight{display:inline-block;margin-top:16px;padding:5px 8px;border:1px solid #4b607a;border-radius:999px;color:var(--cyan);font-size:.82rem;font-weight:800}.note{margin-top:20px;padding:13px 14px;border-left:4px solid var(--orange);background:#142944;border-radius:9px;color:var(--muted)}.exam-top{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;background:var(--navy2);border:1px solid var(--line);border-radius:15px;padding:14px 16px;margin-bottom:16px}.exam-title{font-weight:900;font-size:1.15rem}.exam-meta{color:var(--muted);font-size:.88rem}.timer{font-variant-numeric:tabular-nums;font-weight:900;color:var(--yellow);font-size:1.05rem}.exam-layout{display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:16px}.panel{background:linear-gradient(180deg,var(--card),#182941);border:1px solid var(--line);border-radius:16px;padding:20px}.question-label{color:var(--orange2);font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:.82rem;margin-bottom:10px}.question-text{font-size:1.08rem;font-weight:750;margin-bottom:16px}.select-note{color:var(--cyan);font-size:.88rem;margin:-7px 0 12px;font-weight:800}.option{display:flex;gap:11px;align-items:flex-start;width:100%;padding:12px 13px;margin:9px 0;border:1px solid #3c5775;border-radius:11px;background:#11233a;color:var(--text);text-align:left;cursor:pointer}.option:hover{background:#172d49}.option.selected{border-color:var(--orange);background:#1b304b}.choice{width:26px;height:26px;flex:0 0 26px;border:1px solid #5a7593;border-radius:50%;display:grid;place-items:center;font-weight:900;color:var(--muted)}.option.multi .choice{border-radius:6px}.option.selected .choice{background:var(--orange);border-color:var(--orange);color:#172033}.controls{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid #314966}.btn{min-height:44px;border-radius:9px;padding:10px 14px;border:1px solid #425f80;background:#233d5d;color:var(--text);font-weight:850;cursor:pointer}.btn.primary{background:var(--orange);border-color:var(--orange);color:#172033}.btn.flagged{border-color:var(--yellow);color:var(--yellow)}.btn:disabled{opacity:.45;cursor:not-allowed}.nav-title{font-weight:900;margin-bottom:10px}.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.navq{min-height:36px;border-radius:8px;border:1px solid #45617f;background:#142840;color:var(--text);font-weight:800;cursor:pointer}.navq.answered{background:#214266;border-color:#567b9f}.navq.current{outline:2px solid var(--orange)}.navq.flagged{box-shadow:inset 0 -3px var(--yellow)}.legend{margin-top:14px;color:var(--muted);font-size:.8rem}.legend span{display:block;margin:4px 0}.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;background:#214266}.dot.flag{background:var(--yellow)}.submit{margin-top:16px;width:100%}.review-card{background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}.score-big{font-size:clamp(2.2rem,6vw,4rem);font-weight:950;line-height:1}.pass{color:var(--green)}.fail{color:var(--red)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.stat{background:#11233a;border:1px solid #324b69;border-radius:11px;padding:12px}.stat b{display:block;font-size:1.3rem}.review-list{display:grid;gap:12px}.review-item{background:linear-gradient(180deg,var(--card),#182941);border:1px solid var(--line);border-radius:14px;padding:16px}.review-item.correct{border-left:5px solid var(--green)}.review-item.wrong{border-left:5px solid var(--red)}.answer-line{margin-top:9px;color:var(--muted)}.explanation{margin-top:10px;padding:10px 12px;border-radius:9px;background:#11233a;border-left:4px solid var(--cyan)}.back-home{margin-bottom:14px}@media(max-width:850px){.exam-layout{grid-template-columns:1fr}.sidebar{order:-1}.palette{grid-template-columns:repeat(10,1fr)}.stats{grid-template-columns:1fr 1fr}}@media(max-width:520px){.shell{padding:18px 13px 40px}.brand{align-items:flex-start}.planet{width:48px;height:48px}.exam-top{grid-template-columns:1fr}.palette{grid-template-columns:repeat(5,1fr)}}
-
-.mode-toggle{margin:16px 0 4px}
-.instant-feedback{margin-top:14px;padding:13px 14px;border-radius:11px;background:#102239;border:1px solid #35506f;display:none}.instant-feedback.show{display:block}.instant-feedback.correct{border-left:4px solid var(--green)}.instant-feedback.wrong{border-left:4px solid var(--red)}.instant-feedback .answer-title{font-weight:900;margin-bottom:6px}.instant-feedback.correct .answer-title{color:var(--green)}.instant-feedback.wrong .answer-title{color:var(--red)}
-#submitReviewPanel{max-width:1180px;margin:0 auto;padding:0 20px 60px}
-#reviewPalette{margin-top:12px}
-
-.mode-toggle{margin:16px 0 4px;display:flex;justify-content:flex-end}
-.simple-switch-row{display:inline-flex;align-items:center;gap:12px;cursor:pointer;user-select:none;color:var(--text);font-weight:800}
-.simple-switch-row input{position:absolute;opacity:0;pointer-events:none}
-.switch-label{font-size:.95rem}
-.toggle-switch{position:relative;width:50px;height:28px;border-radius:999px;background:#536172;border:1px solid #6f7d8f;transition:.18s ease;flex:0 0 auto}
-.toggle-switch:after{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;border-radius:50%;background:#fff;transition:.18s ease;box-shadow:0 1px 3px rgba(0,0,0,.35)}
-.simple-switch-row input:checked + .toggle-switch{background:var(--orange);border-color:var(--orange)}
-.simple-switch-row input:checked + .toggle-switch:after{transform:translateX(22px)}
-.simple-switch-row input:focus-visible + .toggle-switch{outline:3px solid rgba(88,213,222,.45);outline-offset:3px}
-
-
-/* ===== Landing page redesign ===== */
-:root{
-  --page-bg:#081423;
-  --surface:#0D1B2D;
-  --surface-2:#102239;
-  --card-bg:#13263D;
-  --card-hover:#172E49;
-  --border-soft:#294766;
-  --text-main:#F5F7FA;
-  --text-secondary:#A8B6C9;
-  --accent-cyan:#35D5E5;
-  --accent-orange:#FF9900;
-  --accent-orange-muted:#F5A623;
-  --success:#22C55E;
-}
-
-body{
-  background:
-    radial-gradient(circle at 48% -8%, rgba(53,213,229,.10), transparent 34rem),
-    radial-gradient(circle at 8% 10%, rgba(255,153,0,.045), transparent 20rem),
-    var(--page-bg);
-}
-body:before{
-  opacity:.055;
-  background-size:92px 92px;
-}
-.shell{
-  max-width:1260px;
-  padding:38px 28px 68px;
-}
-
-/* Hero */
-.app-hero{
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:24px;
-  padding:30px 34px;
-  margin-bottom:26px;
-  border:1px solid rgba(53,213,229,.14);
-  border-radius:24px;
-  background:
-    linear-gradient(135deg, rgba(13,27,45,.94), rgba(11,30,51,.90)),
-    radial-gradient(circle at 12% 20%, rgba(53,213,229,.08), transparent 16rem);
-  box-shadow:0 18px 42px rgba(0,0,0,.18);
-  overflow:hidden;
-}
-.app-hero:after{
-  content:"";
-  position:absolute;
-  right:-90px;
-  top:-120px;
-  width:300px;
-  height:300px;
-  border-radius:50%;
-  border:1px solid rgba(53,213,229,.10);
-  box-shadow:0 0 0 42px rgba(53,213,229,.025),0 0 0 88px rgba(255,153,0,.018);
-  pointer-events:none;
-}
-.reviewer-mark{
-  display:block;
-  width:96px;
-  height:96px;
-  flex:0 0 auto;
-  filter:drop-shadow(0 10px 18px rgba(0,0,0,.25));
-}
-@media(max-width:1023px){.reviewer-mark{width:88px;height:88px}}
-@media(max-width:639px){.reviewer-mark{width:72px;height:72px}}
-.cert-badge{
-  position:relative;
-  width:112px;
-  height:124px;
-  flex:0 0 auto;
-  clip-path:polygon(25% 4%,75% 4%,98% 26%,90% 78%,50% 98%,10% 78%,2% 26%);
-  padding:2px;
-  background:linear-gradient(145deg,var(--accent-cyan),#2b6a9d 62%,var(--accent-orange));
-  filter:drop-shadow(0 10px 18px rgba(0,0,0,.30));
-}
-.cert-badge-inner{
-  width:100%;
-  height:100%;
-  clip-path:inherit;
-  background:linear-gradient(165deg,#13263d,#0d1b2d);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:14px 10px;
-  position:relative;
-}
-.cert-code{
-  font-size:1.02rem;
-  font-weight:900;
-  letter-spacing:.05em;
-  color:var(--text-main);
-}
-.cert-name{
-  margin-top:6px;
-  max-width:74px;
-  font-size:.72rem;
-  line-height:1.15;
-  color:var(--text-secondary);
-  font-weight:700;
-}
-.cert-accent{
-  width:36px;
-  height:3px;
-  margin-top:10px;
-  border-radius:999px;
-  background:var(--accent-orange);
-}
-.hero-copy{min-width:0}
-.hero-pill{
-  display:inline-flex;
-  align-items:center;
-  min-height:28px;
-  padding:5px 10px;
-  margin-bottom:9px;
-  border:1px solid rgba(53,213,229,.20);
-  border-radius:999px;
-  color:var(--accent-cyan);
-  background:rgba(53,213,229,.055);
-  font-size:.73rem;
-  font-weight:850;
-  letter-spacing:.09em;
-}
-.app-hero h1{
-  margin:0;
-  font-size:clamp(2.2rem,4vw,2.75rem);
-  line-height:1.08;
-  letter-spacing:-.035em;
-  color:var(--text-main);
-}
-.hero-subtitle{
-  margin:9px 0 0;
-  color:var(--text-secondary);
-  font-size:1.03rem;
-}
-
-/* Metrics */
-.overview-metrics{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin-bottom:34px;
-}
-.metric{
-  min-height:92px;
-  padding:16px 18px;
-  border:1px solid rgba(41,71,102,.9);
-  border-radius:16px;
-  background:rgba(13,27,45,.78);
-  box-shadow:0 8px 22px rgba(0,0,0,.10);
-}
-.metric strong{
-  display:block;
-  color:var(--text-main);
-  font-size:1.55rem;
-  line-height:1.1;
-  letter-spacing:-.02em;
-}
-.metric span{
-  display:block;
-  margin-top:6px;
-  color:var(--text-secondary);
-  font-size:.84rem;
-}
-
-/* Domain section header */
-.domain-section{
-  margin-top:2px;
-}
-.domain-section-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:24px;
-  margin-bottom:18px;
-}
-.domain-section-head h2{
-  margin:0;
-  font-size:clamp(1.65rem,3vw,1.95rem);
-  letter-spacing:-.025em;
-}
-.domain-section-head p{
-  margin:6px 0 0;
-  color:var(--text-secondary);
-  font-size:.97rem;
-}
-.mode-toggle{margin:0}
-.simple-switch-row{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  min-height:42px;
-  color:var(--text-secondary);
-  font-size:.88rem;
-  font-weight:700;
-  cursor:pointer;
-  user-select:none;
-  white-space:nowrap;
-}
-.simple-switch-row input{
-  position:absolute;
-  opacity:0;
-  pointer-events:none;
-}
-.toggle-switch{
-  position:relative;
-  width:44px;
-  height:24px;
-  border-radius:999px;
-  background:#3e4c5d;
-  border:1px solid #53657a;
-  transition:background .18s ease,border-color .18s ease;
-  flex:0 0 auto;
-}
-.toggle-switch:after{
-  content:"";
-  position:absolute;
-  width:16px;
-  height:16px;
-  left:3px;
-  top:3px;
-  border-radius:50%;
-  background:#fff;
-  transition:transform .18s ease;
-  box-shadow:0 1px 3px rgba(0,0,0,.35);
-}
-.simple-switch-row input:checked + .toggle-switch{
-  background:var(--accent-orange);
-  border-color:var(--accent-orange);
-}
-.simple-switch-row input:checked + .toggle-switch:after{
-  transform:translateX(20px);
-}
-.simple-switch-row input:focus-visible + .toggle-switch{
-  outline:3px solid rgba(53,213,229,.35);
-  outline-offset:3px;
-}
-
-/* Cards */
-.domain-grid{
-  display:grid;
-  grid-template-columns:repeat(6,minmax(0,1fr));
-  gap:18px;
-  margin-top:0;
-}
-.domain-card{
-  grid-column:span 2;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  min-height:286px;
-  padding:22px;
-  overflow:hidden;
-  text-align:left;
-  color:var(--text-main);
-  background:
-    linear-gradient(180deg,rgba(19,38,61,.98),rgba(15,31,50,.98));
-  border:1px solid var(--border-soft);
-  border-radius:18px;
-  box-shadow:0 10px 28px rgba(0,0,0,.15);
-  cursor:pointer;
-  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease;
-}
-.domain-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(53,213,229,.72);
-  background:linear-gradient(180deg,rgba(23,46,73,.98),rgba(17,37,60,.98));
-  box-shadow:0 16px 34px rgba(0,0,0,.22),0 0 0 1px rgba(53,213,229,.05);
-}
-.domain-card:focus-visible{
-  outline:3px solid rgba(53,213,229,.45);
-  outline-offset:3px;
-}
-.domain-card-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:14px;
-}
-.domain-icon{
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
-  flex:0 0 auto;
-  border-radius:12px;
-  color:var(--accent-cyan);
-  background:rgba(53,213,229,.075);
-  border:1px solid rgba(53,213,229,.14);
-}
-.domain-icon svg{width:23px;height:23px;stroke:currentColor}
-.domain-card .num{
-  color:var(--accent-orange-muted);
-  font-size:.72rem;
-  letter-spacing:.11em;
-  font-weight:850;
-}
-.domain-card h3{
-  margin:14px 0 8px;
-  font-size:1.25rem;
-  line-height:1.25;
-  letter-spacing:-.015em;
-}
-.domain-description{
-  margin:0 0 18px;
-  color:var(--text-secondary);
-  font-size:.91rem;
-  line-height:1.55;
-}
-.domain-meta{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:auto;
-}
-.weight,.questions-pill{
-  display:inline-flex;
-  align-items:center;
-  min-height:30px;
-  margin:0;
-  padding:5px 9px;
-  border-radius:999px;
-  font-size:.77rem;
-  font-weight:800;
-}
-.weight{
-  color:#ffd28a;
-  border:1px solid rgba(255,153,0,.23);
-  background:rgba(255,153,0,.075);
-}
-.questions-pill{
-  color:var(--text-secondary);
-  border:1px solid rgba(168,182,201,.18);
-  background:rgba(168,182,201,.045);
-}
-.weight-bar{
-  height:3px;
-  margin:15px 0 16px;
-  overflow:hidden;
-  border-radius:999px;
-  background:#0a1727;
-}
-.weight-bar span{
-  display:block;
-  height:100%;
-  border-radius:inherit;
-  background:linear-gradient(90deg,var(--accent-orange),var(--accent-cyan));
-}
-.card-cta{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  margin-top:15px;
-  color:var(--accent-cyan);
-  font-size:.86rem;
-  font-weight:800;
-}
-.card-cta-arrow{
-  transition:transform .18s ease;
-}
-.domain-card:hover .card-cta-arrow{transform:translateX(3px)}
-
-/* Info panel */
-.practice-info{
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
-  margin-top:26px;
-  padding:14px 16px;
-  border:1px solid rgba(41,71,102,.86);
-  border-left:3px solid var(--accent-orange);
-  border-radius:12px;
-  background:rgba(13,27,45,.70);
-}
-.practice-info-icon{
-  width:22px;
-  height:22px;
-  display:grid;
-  place-items:center;
-  flex:0 0 auto;
-  border:1px solid rgba(255,153,0,.38);
-  border-radius:50%;
-  color:var(--accent-orange);
-  font-size:.78rem;
-  font-weight:900;
-}
-.practice-info strong{
-  display:block;
-  margin-bottom:3px;
-  color:var(--text-main);
-  font-size:.91rem;
-}
-.practice-info p{
-  margin:0;
-  color:var(--text-secondary);
-  font-size:.84rem;
-}
-.practice-info small{
-  display:block;
-  margin-top:4px;
-  color:#8294aa;
-  font-size:.76rem;
-}
-
-/* Legacy landing elements no longer used */
-.planet,.hero,.note{}
-
-/* Responsive landing */
-@media(max-width:1000px){
-  .domain-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .domain-card,
-  .domain-card:nth-child(4),
-  .domain-card:nth-child(5){grid-column:auto}
-  .domain-card:last-child{grid-column:1 / -1;max-width:calc(50% - 9px);width:100%;justify-self:center}
-}
-@media(max-width:760px){
-  .shell{padding:24px 18px 52px}
-  .app-hero{padding:24px;gap:18px}
-  .cert-badge{width:92px;height:102px}
-  .overview-metrics{grid-template-columns:repeat(2,1fr)}
-  .domain-section-head{align-items:flex-start;flex-direction:column;gap:14px}
-  .simple-switch-row{white-space:normal}
-}
-@media(max-width:560px){
-  .app-hero{align-items:flex-start;padding:20px;border-radius:18px}
-  .cert-badge{width:76px;height:84px}
-  .cert-code{font-size:.78rem}
-  .cert-name{font-size:.58rem}
-  .hero-pill{display:none}
-  .app-hero h1{font-size:1.78rem}
-  .hero-subtitle{font-size:.88rem}
-  .overview-metrics{gap:9px;margin-bottom:28px}
-  .metric{min-height:80px;padding:13px}
-  .metric strong{font-size:1.3rem}
-  .domain-grid{grid-template-columns:1fr}
-  .domain-card,
-  .domain-card:nth-child(4),
-  .domain-card:nth-child(5),
-  .domain-card:last-child{grid-column:auto;max-width:none}
-  .domain-card{min-height:0}
-  .practice-info{padding:13px}
-}
-
-
-/* ===== Focused landing refinement based on Impeccable-style critique/layout/typeset/audit ===== */
-:root{
-  --space-1:4px;
-  --space-2:8px;
-  --space-3:12px;
-  --space-4:16px;
-  --space-5:24px;
-  --space-6:32px;
-  --space-7:48px;
-  --space-8:64px;
-}
-
-.shell{
-  max-width:1240px;
-  padding:32px 24px 56px;
-}
-
-/* Hero: compact, intentional, non-dashboard */
-.app-hero{
-  padding:22px 24px;
-  margin-bottom:34px;
-  gap:20px;
-  min-height:auto;
-}
-.cert-badge{
-  width:96px;
-  height:106px;
-}
-.cert-code{font-size:.9rem}
-.cert-name{font-size:.66rem}
-.cert-accent{width:30px;height:3px;margin-top:8px}
-.hero-pill{
-  margin-bottom:7px;
-  padding:4px 9px;
-  min-height:26px;
-  font-size:.69rem;
-}
-.app-hero h1{
-  font-size:clamp(2rem,3.7vw,2.6rem);
-  line-height:1.08;
-}
-.hero-subtitle{
-  margin-top:7px;
-  font-size:.98rem;
-}
-
-/* Domain section */
-.domain-section{
-  margin-top:0;
-}
-.domain-section-head{
-  align-items:center;
-  margin-bottom:20px;
-  gap:24px;
-}
-.domain-section-head h2{
-  font-size:clamp(1.6rem,2.6vw,1.9rem);
-  line-height:1.15;
-}
-.domain-section-head p{
-  max-width:650px;
-  margin-top:6px;
-  line-height:1.5;
-}
-.simple-switch-row{
-  min-height:44px;
-  max-width:360px;
-  justify-content:flex-end;
-  gap:10px;
-  white-space:normal;
-  text-align:right;
-  font-size:.86rem;
-}
-.switch-label{line-height:1.35}
-.toggle-switch{
-  width:42px;
-  height:24px;
-}
-.toggle-switch:after{
-  width:16px;
-  height:16px;
-}
-.simple-switch-row input:checked + .toggle-switch:after{
-  transform:translateX(18px);
-}
-
-/* Cards remain the primary focus */
-.domain-grid{
-  grid-template-columns:repeat(6,minmax(0,1fr));
-  gap:20px;
-}
-.domain-card{
-  min-height:300px;
-  padding:22px;
-  border-radius:18px;
-  box-shadow:0 8px 22px rgba(0,0,0,.14);
-  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease;
-}
-@media (hover:hover) and (pointer:fine){
-  .domain-card:hover{
-    transform:translateY(-2px);
-    box-shadow:0 13px 28px rgba(0,0,0,.20),0 0 0 1px rgba(53,213,229,.04);
-  }
-}
-.domain-card:active{transform:translateY(0)}
-.domain-card h3{
-  font-size:1.22rem;
-  line-height:1.28;
-  margin:13px 0 8px;
-}
-.domain-description{
-  flex-grow:1;
-  font-size:.92rem;
-  line-height:1.55;
-  margin-bottom:16px;
-}
-.domain-icon{
-  width:40px;
-  height:40px;
-}
-.domain-meta{gap:7px}
-.weight,.questions-pill{
-  min-height:29px;
-  padding:5px 9px;
-  font-size:.76rem;
-}
-.weight-bar{
-  margin:14px 0 15px;
-}
-.card-cta{
-  margin-top:14px;
-  min-height:44px;
-  align-items:center;
-  font-size:.88rem;
-}
-
-/* Practice panel stays subordinate */
-.practice-info{
-  margin-top:24px;
-  padding:13px 15px;
-  gap:11px;
-}
-.practice-info p{
-  line-height:1.5;
-}
-.practice-info small{
-  line-height:1.45;
-}
-
-/* Remove dead landing-dashboard classes from the active layout */
-.overview-metrics,.metric{display:none!important}
-
-/* Exam responsiveness: conservative fixes only */
-.exam-top{
-  min-width:0;
-}
-.exam-title,.exam-meta,.question-text,.option span:last-child{
-  overflow-wrap:anywhere;
-}
-.exam-layout,.panel,.sidebar{
-  min-width:0;
-}
-.option{
-  min-width:0;
-}
-.controls .btn{
-  min-height:44px;
-}
-.palette{
-  min-width:0;
-}
-.review-item{
-  overflow-wrap:anywhere;
-}
-
-/* Tablet */
-@media(max-width:1023px){
-  .shell{padding:28px 20px 50px}
-  .app-hero{
-    gap:18px;
-    padding:21px 22px;
-    margin-bottom:30px;
-  }
-  .cert-badge{width:88px;height:97px}
-  .domain-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:16px;
-  }
-  .domain-card,
-  .domain-card:nth-child(4),
-  .domain-card:nth-child(5){
-    grid-column:auto;
-  }
-  .domain-card:last-child{
-    grid-column:auto;
-    max-width:none;
-    width:auto;
-    justify-self:stretch;
-  }
-  .domain-section-head{
-    align-items:flex-start;
-  }
-  .simple-switch-row{
-    max-width:320px;
-  }
-}
-
-/* Small tablet / large mobile */
-@media(max-width:767px){
-  .shell{padding:22px 18px 46px}
-  .app-hero{
-    margin-bottom:28px;
-  }
-  .domain-section-head{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:14px;
-  }
-  .simple-switch-row{
-    justify-content:flex-start;
-    text-align:left;
-    max-width:100%;
-  }
-  .domain-card{
-    min-height:284px;
-  }
-
-  /* exam layout remains usable on narrow screens */
-  .exam-top{
-    grid-template-columns:1fr auto;
-    align-items:start;
-    gap:10px;
-  }
-  .exam-layout{
-    grid-template-columns:1fr;
-  }
-  .sidebar{order:-1}
-  .palette{
-    grid-template-columns:repeat(10,minmax(30px,1fr));
-  }
-}
-
-/* Phone */
-@media(max-width:639px){
-  body:before{opacity:.035}
-  .shell{padding:18px 16px 40px}
-  .app-hero{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:13px;
-    padding:18px;
-    margin-bottom:25px;
-    border-radius:17px;
-  }
-  .app-hero:after{
-    right:-150px;
-    top:-150px;
-    opacity:.35;
-  }
-  .cert-badge{
-    width:72px;
-    height:80px;
-  }
-  .cert-code{font-size:.7rem}
-  .cert-name{font-size:.53rem}
-  .cert-accent{width:24px;margin-top:6px}
-  .hero-pill{
-    display:inline-flex;
-    margin-bottom:6px;
-  }
-  .app-hero h1{
-    font-size:clamp(1.72rem,8vw,2.05rem);
-    line-height:1.1;
-    max-width:13ch;
-  }
-  .hero-subtitle{
-    font-size:.9rem;
-    max-width:30ch;
-  }
-  .domain-section-head{
-    margin-bottom:17px;
-  }
-  .domain-section-head h2{
-    font-size:1.55rem;
-  }
-  .domain-section-head p{
-    font-size:.92rem;
-  }
-  .simple-switch-row{
-    width:100%;
-    min-height:48px;
-    gap:10px;
-    font-size:.88rem;
-  }
-  .domain-grid{
-    grid-template-columns:1fr;
-    gap:14px;
-  }
-  .domain-card,
-  .domain-card:nth-child(4),
-  .domain-card:nth-child(5),
-  .domain-card:last-child{
-    grid-column:auto;
-    max-width:none;
-    width:100%;
-  }
-  .domain-card{
-    min-height:0;
-    padding:17px;
-    border-radius:16px;
-  }
-  .domain-card h3{
-    font-size:1.12rem;
-  }
-  .domain-description{
-    font-size:.9rem;
-    margin-bottom:14px;
-  }
-  .domain-icon{
-    width:38px;
-    height:38px;
-  }
-  .domain-meta{
-    gap:6px;
-  }
-  .practice-info{
-    margin-top:20px;
-    padding:13px 14px;
-  }
-  .practice-info p{
-    font-size:.84rem;
-  }
-  .practice-info small{
-    font-size:.76rem;
-  }
-
-  /* Exam/mobile */
-  .exam-top{
-    grid-template-columns:1fr;
-  }
-  .timer{
-    justify-self:start;
-  }
-  .panel{
-    padding:16px;
-  }
-  .question-text{
-    font-size:1rem;
-  }
-  .option{
-    padding:11px 12px;
-  }
-  .controls{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-  }
-  #flagBtn{
-    grid-column:1 / -1;
-  }
-  .palette{
-    grid-template-columns:repeat(5,minmax(34px,1fr));
-  }
-  .stats{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-/* Landscape-ish narrow widths */
-@media(max-width:900px) and (orientation:landscape){
-  .app-hero{
-    padding:18px 20px;
-    margin-bottom:24px;
-  }
-  .domain-card{
-    min-height:270px;
-  }
-}
-
-@media(prefers-reduced-motion:reduce){
-  .domain-card,.card-cta-arrow,.toggle-switch,.toggle-switch:after{
-    transition:none!important;
-  }
-}
-
-
-/* ===== Structured AIF-C01 answer explanations ===== */
-.answer-explanation{
-  margin-top:14px;
-  display:grid;
-  gap:12px;
-  color:var(--text);
-}
-.explain-block{
-  padding:13px 14px;
-  border:1px solid #35506f;
-  border-radius:11px;
-  background:#102239;
-}
-.explain-block h4{
-  margin:0 0 7px;
-  font-size:.93rem;
-  letter-spacing:-.01em;
-}
-.explain-block p{
-  margin:0;
-  color:#d6deea;
-  line-height:1.58;
-  font-size:.92rem;
-}
-.explain-correct{
-  border-left:4px solid var(--green);
-  background:rgba(34,197,94,.055);
-}
-.explain-correct h4{color:#8ee8ae}
-.explain-wrong{
-  border-left:4px solid rgba(255,107,107,.72);
-}
-.explain-wrong h4{color:#ffb0b0}
-.explain-clue{
-  border-left:4px solid var(--cyan);
-  background:rgba(53,213,229,.045);
-}
-.explain-clue h4{color:var(--cyan)}
-.explain-tip{
-  border-left:4px solid var(--orange);
-  background:rgba(255,153,0,.045);
-}
-.explain-tip h4{color:#ffc46a}
-.explain-remember{
-  padding:10px 12px;
-  border-radius:9px;
-  border:1px dashed #4a6481;
-  background:#0d1e32;
-  color:#cbd7e6;
-  font-size:.88rem;
-}
-.choice-rationale{
-  margin-top:8px!important;
-  padding-top:8px;
-  border-top:1px solid rgba(255,255,255,.055);
-}
-.choice-rationale:first-of-type{
-  margin-top:0!important;
-  padding-top:0;
-  border-top:0;
-}
-.answer-key{
-  display:inline-block;
-  margin-bottom:7px;
-  color:#9bf0b9;
-  font-weight:900;
-}
-@media(max-width:639px){
-  .answer-explanation{gap:10px}
-  .explain-block{padding:12px}
-  .explain-block p{font-size:.9rem;line-height:1.55}
-  .explain-block h4{font-size:.92rem}
-}
-
-
-.explain-transfer{
-  border-left:4px solid #8b9cff;
-  background:rgba(139,156,255,.045);
-}
-.explain-transfer h4{color:#b9c2ff}
-.explain-reference{
-  padding:9px 11px;
-  border-top:1px solid rgba(255,255,255,.08);
-  color:var(--muted);
-  font-size:.78rem;
-  line-height:1.5;
-}
-.explain-reference a{
-  color:var(--cyan);
-  text-decoration:none;
-}
-.explain-reference a:hover{text-decoration:underline}
-
-
-/* ===== Instructor-style answer explanation ===== */
-.instant-feedback{margin-top:16px;padding:0;border:0;background:transparent}
-.instant-feedback.show{display:block}
-.instant-feedback.correct,.instant-feedback.wrong{border:0;background:transparent}
-.response-status{width:fit-content;margin:0 0 10px;font-size:.9rem;font-weight:850}
-.response-good{color:var(--green)}
-.response-wrong{color:#ff9b9b}
-.feedback-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:10px}
-.feedback-top .response-status{flex:1 1 250px;margin:0}
-.feedback-next{margin-left:auto;white-space:nowrap}
-
-.answer-review{
-  max-width:820px;
-  padding:19px 20px;
-  border:1px solid #34506e;
-  border-radius:14px;
-  background:#102139;
-  color:var(--text);
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
-}
-.answer-review-head,.review-section,.exam-takeaway,.learning-details{max-width:72ch}
-.answer-status{margin-bottom:7px;color:#7ee7a3;font-size:.78rem;font-weight:850;letter-spacing:.03em}
-.answer-review h3{margin:0 0 9px;color:#f6fbff;font-size:1.12rem;line-height:1.35}
-.core-reason{margin:0;color:#d9e3ef;font-size:.94rem;line-height:1.62}
-.explain-divider{height:1px;margin:17px 0;background:rgba(168,182,201,.16)}
-
-.review-section h4,.exam-takeaway h4{
-  margin:0 0 12px;
-  color:#cbd7e6;
-  font-size:.82rem;
-  letter-spacing:.045em;
-  text-transform:uppercase;
-}
-.distractor{padding:0 0 13px;margin:0 0 13px;border-bottom:1px solid rgba(168,182,201,.10)}
-.distractor:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
-.distractor h5{margin:0 0 5px;color:#eef4fb;font-size:.92rem;line-height:1.4}
-.distractor p{margin:0;color:#b9c8d9;font-size:.9rem;line-height:1.58}
-.distractor-selected{
-  padding:10px 11px;
-  border:1px solid rgba(255,107,107,.18);
-  border-radius:9px;
-  background:rgba(255,107,107,.045);
-}
-.selected-tag{
-  display:inline-block;
-  margin-right:5px;
-  color:#ffb0b0;
-  font-size:.72rem;
-  font-weight:850;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-}
-
-.exam-takeaway{
-  margin-top:18px;
-  padding:13px 14px;
-  border-left:3px solid var(--orange);
-  border-radius:7px;
-  background:rgba(255,153,0,.045);
-}
-.exam-takeaway h4{margin-bottom:8px;color:#ffc46a}
-.exam-takeaway p{margin:5px 0;color:#dce5ef;font-size:.9rem;line-height:1.52}
-.learning-details{
-  margin-top:14px;
-  border-top:1px solid rgba(168,182,201,.14);
-  color:var(--muted);
-}
-.learning-details summary{
-  min-height:44px;
-  display:flex;
-  align-items:center;
-  cursor:pointer;
-  color:#9fcbd7;
-  font-size:.86rem;
-  font-weight:800;
-}
-.learning-details summary:focus-visible{
-  outline:3px solid rgba(53,213,229,.34);
-  outline-offset:3px;
-  border-radius:6px;
-}
-.learning-details-body{padding:0 0 6px}
-.detail-group{padding:8px 0}
-.detail-group h5{
-  margin:0 0 4px;
-  color:#c7d4e3;
-  font-size:.78rem;
-  letter-spacing:.045em;
-  text-transform:uppercase;
-}
-.detail-group p{margin:0;color:#92a4ba;font-size:.82rem;line-height:1.5}
-.detail-group a{
-  display:block;
-  width:fit-content;
-  margin-top:4px;
-  color:var(--cyan);
-  font-size:.82rem;
-  text-decoration:none;
-}
-.detail-group a:hover{text-decoration:underline}
-
-/* Old multi-card explanation components are no longer rendered. */
-.review-item .answer-review{margin-top:14px}
-.review-item.correct .answer-review,.review-item.wrong .answer-review{border-left-width:1px}
-
-@media(max-width:639px){
-  .answer-review{max-width:none;padding:16px;border-radius:12px}
-  .answer-review h3{font-size:1.05rem}
-  .core-reason,.distractor p,.exam-takeaway p{font-size:.9rem;line-height:1.55}
-  .exam-takeaway{padding:12px}
-  .distractor-selected{padding:9px 10px}
-}
-
-
-/* Matching / hotspot questions */
-.matching-list{display:grid;gap:12px;margin-top:8px}
-.matching-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,.7fr);gap:14px;align-items:center;padding:12px 13px;border:1px solid #3c5775;border-radius:11px;background:#11233a}
-.matching-prompt{color:var(--text);font-size:.94rem;line-height:1.45}
-.matching-select{width:100%;min-height:42px;border:1px solid #45617f;border-radius:9px;background:#0f2137;color:var(--text);padding:8px 10px;font:inherit}
-.matching-select:focus{outline:2px solid var(--orange);outline-offset:1px}
-@media(max-width:639px){.matching-row{grid-template-columns:1fr}.matching-select{min-height:46px}}
-/* Subtle, accessible feedback across exam interactions. */
-.btn,.option,.navq,.matching-select,.learning-details summary{
-  transition:transform .13s ease,box-shadow .18s ease,border-color .18s ease,background-color .18s ease;
-}
-.btn:not(:disabled):hover,.navq:hover{box-shadow:0 4px 14px rgba(0,0,0,.18)}
-.btn:not(:disabled):active,.option:active,.navq:active,.domain-card:active{
-  transform:scale(.975);box-shadow:0 1px 4px rgba(0,0,0,.16);
-}
-.option:hover{border-color:#6685a7;transform:translateY(-1px)}
-.option.selected{box-shadow:inset 0 0 0 1px rgba(255,153,0,.25)}
-.btn:focus-visible,.option:focus-visible,.navq:focus-visible,.domain-card:focus-visible,
-.matching-select:focus-visible,.learning-details summary:focus-visible{
-  outline:3px solid var(--cyan);outline-offset:3px;
-}
-.navq.current{transition:transform .13s ease,box-shadow .18s ease,outline-color .18s ease}
-.question-enter{animation:questionEnter .22s ease-out both}
-.instant-feedback.show{animation:feedbackEnter .24s ease-out both}
-#submitReviewPanel:not(.hidden),#results:not(.hidden){animation:feedbackEnter .25s ease-out both}
-@keyframes questionEnter{from{opacity:.55;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-@keyframes feedbackEnter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){
-  .btn,.option,.navq,.domain-card,.matching-select,.learning-details summary{transition:none!important}
-  .question-enter,.instant-feedback.show,#submitReviewPanel:not(.hidden),#results:not(.hidden){animation:none!important}
-  html{scroll-behavior:auto}
-}
-</style>  <link rel="manifest" href="./manifest.webmanifest">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIF-C01 Exam Reviewer | AWS Certified AI Practitioner</title><link rel="stylesheet" href="./styles.css">  <link rel="manifest" href="./manifest.webmanifest">
   <meta name="theme-color" content="#081423">
-</head><body><div class="shell"><header class="app-hero" aria-labelledby="appTitle">
-  <img class="reviewer-mark" src="./assets/reviewer-mark.svg" alt="" width="96" height="96">
+</head><body>
+<div class="ambient" aria-hidden="true"><div class="ambient-glow"></div><div class="ambient-stars"></div><div class="ambient-orbit"></div></div>
+<div class="shell">
+<header class="app-hero" aria-labelledby="appTitle">
   <div class="hero-copy">
-    <div class="hero-pill">AIF-C01 • EXAM PREP</div>
-    <h1 id="appTitle">AIF-C01: Exam Reviewer</h1>
-    <p class="hero-subtitle">AWS Certified AI Practitioner Practice Environment</p>
+    <div class="hero-identity"><img class="reviewer-mark" src="./assets/reviewer-mark.svg" alt="" width="42" height="42"><span>AIF-C01 / FIELD GUIDE</span></div>
+    <p class="hero-eyebrow">AWS CERTIFIED AI PRACTITIONER</p>
+    <h1 id="appTitle">Explore AI.<br><em>Practice with purpose.</em></h1>
+    <p class="hero-subtitle">A focused exam reviewer for learning the concepts, spotting the clues, and building confidence one question at a time.</p>
+    <div class="hero-actions"><a class="btn primary hero-action" href="#domainSectionTitle">Explore practice sets <span aria-hidden="true">↗</span></a><span class="hero-caption">Five domains · Five full mock exams</span></div>
   </div>
-</header><section id="landing">
-<section class="domain-section" aria-labelledby="domainSectionTitle">
-    <div class="domain-section-head">
-      <div>
-        <h2 id="domainSectionTitle">Choose an Exam</h2>
-        <p>Practice individual AIF-C01 domains or take a full 65-question mock exam.</p>
-      </div>
-      <label class="simple-switch-row" for="instantFeedbackToggle">
-        <input type="checkbox" id="instantFeedbackToggle" aria-label="Show answers after each question" checked>
-        <span class="toggle-switch" aria-hidden="true"></span>
-        <span class="switch-label">Show answers after each question</span>
-      </label>
+  <div class="hero-art" aria-hidden="true">
+    <div class="art-orbit art-orbit-outer"></div><div class="art-orbit art-orbit-inner"></div>
+    <div class="art-core"><span class="art-core-label">AI</span><span class="art-core-sub">AIF-C01</span></div>
+    <div class="art-satellite art-satellite-one"><svg viewBox="0 0 48 48" fill="none"><circle cx="12" cy="14" r="4"/><circle cx="36" cy="12" r="4"/><circle cx="25" cy="36" r="4"/><path d="M16 14l16 0M14 18l9 14M34 16l-7 16"/></svg></div>
+    <div class="art-satellite art-satellite-two"><svg viewBox="0 0 48 48" fill="none"><path d="M24 5 28 18l13 6-13 5-4 14-5-14-12-5 12-6 5-13Z"/></svg></div>
+    <span class="art-spark spark-one"></span><span class="art-spark spark-two"></span><span class="art-spark spark-three"></span>
+    <span class="art-annotation">LEARN / APPLY / REVIEW</span>
+  </div>
+</header>
+<main id="landing">
+  <section class="domain-section" aria-labelledby="domainSectionTitle">
+    <div class="domain-section-head"><div><span class="section-kicker">01 / FOCUSED PRACTICE</span><h2 id="domainSectionTitle">Learn by domain</h2><p>Build fluency in one part of the exam at a time.</p></div>
+      <label class="simple-switch-row" for="instantFeedbackToggle"><input type="checkbox" id="instantFeedbackToggle" aria-label="Show answers after each question" checked><span class="toggle-switch" aria-hidden="true"></span><span class="switch-label">Show answers after each question</span></label>
     </div>
-
     <div class="domain-grid" id="domainGrid"></div>
   </section>
-
-  <aside class="practice-info" aria-label="Practice environment information">
-    <div class="practice-info-icon" aria-hidden="true">i</div>
-    <div>
-      <strong>Practice Environment</strong>
-      <p>These are practice questions aligned with the AIF-C01 exam domains. They are not presented as official AWS certification questions.</p>
-      <small>Practice passing target: 18/25 per domain. AWS uses scaled scoring on the real exam.</small>
-    </div>
-  </aside>
-</section><section id="exam" class="hidden"><button class="btn back-home" id="exitExam" type="button">← Back to exams</button><div class="exam-top"><div><div class="exam-title" id="examTitle"></div><div class="exam-meta" id="examMeta"></div></div><div class="timer" id="timer">40:00</div></div><div class="exam-layout"><div class="panel"><div class="question-label" id="questionLabel"></div><div class="question-text" id="questionText"></div><div class="select-note hidden" id="selectNote">Select TWO answers.</div><div id="options"></div><div class="instant-feedback" id="instantFeedback" aria-live="polite"></div><div class="controls"><button class="btn" id="prevBtn" type="button">Previous</button><button class="btn" id="flagBtn" type="button">Flag for review</button><button class="btn primary" id="nextBtn" type="button">Next</button></div></div><aside class="panel sidebar"><div class="nav-title">Question navigation</div><div class="palette" id="palette"></div><div class="legend"><span><i class="dot"></i>Answered</span><span><i class="dot flag"></i>Flagged</span></div><button class="btn primary submit" id="submitBtn" type="button">Submit exam</button></aside></div></section>
+  <section class="mock-section" aria-labelledby="mockSectionTitle"><div class="domain-section-head"><div><span class="section-kicker">02 / EXAM SIMULATION</span><h2 id="mockSectionTitle">Full mock exams</h2><p>Put it all together in a timed, mixed-domain practice run.</p></div><span class="section-aside">65 questions · 90 minutes each</span></div><div class="mock-grid" id="mockGrid"></div></section>
+  <aside class="practice-info" aria-label="Practice environment information"><span class="practice-info-icon" aria-hidden="true">i</span><div><strong>Made for practice</strong><p>These questions align with AIF-C01 domains and are not official AWS certification questions. The practice threshold is 72%; AWS uses scaled scoring on the real exam.</p></div></aside>
+</main>
+<section id="exam" class="hidden"><button class="btn back-home" id="exitExam" type="button">← Back to exams</button><div class="exam-top"><div><div class="exam-title" id="examTitle"></div><div class="exam-meta" id="examMeta"></div></div><div class="timer" id="timer" role="timer" aria-label="Time remaining">40:00</div></div><div class="progress-track" role="progressbar" aria-label="Questions answered" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="examProgress"><span id="examProgressFill"></span></div><div class="exam-layout"><div class="panel"><div class="question-label" id="questionLabel"></div><div class="question-text" id="questionText"></div><div class="select-note hidden" id="selectNote">Select TWO answers.</div><div id="options"></div><div class="instant-feedback" id="instantFeedback" aria-live="polite"></div><div class="controls"><button class="btn" id="prevBtn" type="button">Previous</button><button class="btn" id="flagBtn" type="button">Flag for review</button><button class="btn primary" id="nextBtn" type="button">Next</button></div></div><aside class="panel sidebar"><div class="nav-title">Question navigation</div><div class="palette" id="palette"></div><div class="legend"><span><i class="dot"></i>Answered</span><span><i class="dot flag"></i>Flagged</span></div><button class="btn primary submit" id="submitBtn" type="button">Submit exam</button></aside></div></section>
 <section id="submitReviewPanel" class="hidden">
   <div class="review-card">
     <h2>Review before submitting</h2>
@@ -1162,7 +66,7 @@ const domains=[
   window.aifExamData.mockExam5
 ];
 const state={domain:null,index:0,answers:[],flags:[],remaining:0,timerId:null,instantFeedback:true};
-const landing=document.getElementById('landing'),exam=document.getElementById('exam'),results=document.getElementById('results'),grid=document.getElementById('domainGrid'),examTitle=document.getElementById('examTitle'),examMeta=document.getElementById('examMeta'),timer=document.getElementById('timer'),qLabel=document.getElementById('questionLabel'),qText=document.getElementById('questionText'),options=document.getElementById('options'),selectNote=document.getElementById('selectNote'),palette=document.getElementById('palette'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),flagBtn=document.getElementById('flagBtn'),submitBtn=document.getElementById('submitBtn'),instantFeedbackToggle=document.getElementById('instantFeedbackToggle'),instantFeedback=document.getElementById('instantFeedback'),submitReviewPanel=document.getElementById('submitReviewPanel'),reviewSummary=document.getElementById('reviewSummary'),reviewPalette=document.getElementById('reviewPalette'),returnToExam=document.getElementById('returnToExam'),confirmSubmit=document.getElementById('confirmSubmit');
+const landing=document.getElementById('landing'),exam=document.getElementById('exam'),results=document.getElementById('results'),grid=document.getElementById('domainGrid'),mockGrid=document.getElementById('mockGrid'),examTitle=document.getElementById('examTitle'),examMeta=document.getElementById('examMeta'),timer=document.getElementById('timer'),progress=document.getElementById('examProgress'),progressFill=document.getElementById('examProgressFill'),qLabel=document.getElementById('questionLabel'),qText=document.getElementById('questionText'),options=document.getElementById('options'),selectNote=document.getElementById('selectNote'),palette=document.getElementById('palette'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),flagBtn=document.getElementById('flagBtn'),submitBtn=document.getElementById('submitBtn'),instantFeedbackToggle=document.getElementById('instantFeedbackToggle'),instantFeedback=document.getElementById('instantFeedback'),submitReviewPanel=document.getElementById('submitReviewPanel'),reviewSummary=document.getElementById('reviewSummary'),reviewPalette=document.getElementById('reviewPalette'),returnToExam=document.getElementById('returnToExam'),confirmSubmit=document.getElementById('confirmSubmit');
 const ANSWER_PREF_KEY='aifc01_show_answers_after_each_question';
 const savedAnswerPreference=localStorage.getItem(ANSWER_PREF_KEY);
 instantFeedbackToggle.checked=savedAnswerPreference===null ? true : savedAnswerPreference==='true';
@@ -1221,7 +125,7 @@ domains.forEach(d=>{
     </div>
     <div class="card-cta">${isMock?'Start Mock Exam':'Start Practice'} <span class="card-cta-arrow" aria-hidden="true">→</span></div>`;
   b.addEventListener('click',()=>startExam(d.id));
-  grid.appendChild(b);
+  (isMock?mockGrid:grid).appendChild(b);
 });
 function startExam(id){
   const d=domains.find(x=>x.id===id);
@@ -1241,9 +145,9 @@ function startExam(id){
   state.timerId=setInterval(()=>{state.remaining--;renderTimer();if(state.remaining<=0){clearInterval(state.timerId);submitExam(true)}},1000);
   renderTimer();
   renderQuestion();
-  window.scrollTo({top:0,behavior:'smooth'});
+  window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
 }
-function renderTimer(){const m=Math.floor(state.remaining/60),s=state.remaining%60;timer.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;timer.style.color=state.remaining<=300?'var(--red)':'var(--yellow)'}
+function renderTimer(){const m=Math.floor(state.remaining/60),s=state.remaining%60;timer.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;timer.classList.toggle('warning',state.remaining<=600&&state.remaining>300);timer.classList.toggle('critical',state.remaining<=300)}
 function renderQuestion(){
   const changedQuestion=renderQuestion.lastIndex!==state.index;
   renderQuestion.lastIndex=state.index;
@@ -1298,6 +202,7 @@ function renderQuestion(){
       const b=document.createElement('button');
       b.type='button';
       b.className='option'+(selectCount>1?' multi':'')+(state.answers[state.index].includes(i)?' selected':'');
+      b.setAttribute('aria-pressed',String(state.answers[state.index].includes(i)));
       b.innerHTML=`<span class="choice">${String.fromCharCode(65+i)}</span><span>${o}</span>`;
       b.addEventListener('click',()=>choose(i));
       options.appendChild(b);
@@ -1394,6 +299,19 @@ function renderInstantFeedback(){
   const q=state.domain.questions[state.index],a=state.answers[state.index];
   if(!isComplete(q,a))return;
   const ok=isCorrect(q,a);
+  if(q.type!=='matching'){
+    [...options.children].forEach((option,i)=>{
+      const correct=q.ans.includes(i);
+      const chosen=a.includes(i);
+      if(correct||chosen){
+        option.classList.add(correct?'revealed-correct':'revealed-wrong');
+        const label=document.createElement('span');
+        label.className='option-state';
+        label.textContent=correct?'Correct answer':'Your choice';
+        option.appendChild(label);
+      }
+    });
+  }
   instantFeedback.classList.add('show',ok?'correct':'wrong');
   const selected=answerDisplay(q,a);
   const status=ok
@@ -1414,7 +332,7 @@ function choose(i){
   }
   renderQuestion();
 }
-function renderPalette(){palette.innerHTML='';state.domain.questions.forEach((q,i)=>{const b=document.createElement('button');b.className='navq'+(isAnswered(q,state.answers[i])?' answered':'')+(i===state.index?' current':'')+(state.flags[i]?' flagged':'');b.textContent=i+1;b.addEventListener('click',()=>{state.index=i;renderQuestion()});palette.appendChild(b)})}
+function renderPalette(){palette.innerHTML='';let answered=0;state.domain.questions.forEach((q,i)=>{const done=isAnswered(q,state.answers[i]);if(done)answered++;const b=document.createElement('button');b.type='button';b.className='navq'+(done?' answered':'')+(i===state.index?' current':'')+(state.flags[i]?' flagged':'');b.textContent=i+1;b.setAttribute('aria-label',`Question ${i+1}, ${done?'answered':'unanswered'}${state.flags[i]?', flagged':''}${i===state.index?', current':''}`);if(i===state.index)b.setAttribute('aria-current','step');b.addEventListener('click',()=>{state.index=i;renderQuestion()});palette.appendChild(b)});const percent=Math.round(answered/state.domain.questions.length*100);progress.setAttribute('aria-valuenow',String(percent));progress.setAttribute('aria-valuetext',`${answered} of ${state.domain.questions.length} questions answered`);progressFill.style.width=`${percent}%`}
 prevBtn.addEventListener('click',()=>{if(state.index>0){state.index--;renderQuestion()}});
 function goNext(){if(state.index<state.domain.questions.length-1){state.index++;renderQuestion()}else{openSubmitReview()}}
 nextBtn.addEventListener('click',goNext);
@@ -1433,6 +351,7 @@ function openSubmitReview(){
     b.className='navq'+(isAnswered(q,state.answers[i])?' answered':'')+(state.flags[i]?' flagged':'');
     b.textContent=i+1;
     b.title=isAnswered(q,state.answers[i])?'Answered':'Unanswered';
+    b.setAttribute('aria-label',`Question ${i+1}, ${b.title.toLowerCase()}${state.flags[i]?', flagged':''}`);
     b.addEventListener('click',()=>{
       submitReviewPanel.classList.add('hidden');
       exam.classList.remove('hidden');
@@ -1489,7 +408,9 @@ function submitExam(auto){
   let correct=0;
   qs.forEach((q,i)=>{if(isCorrect(q,state.answers[i]))correct++});
   const answered=qs.reduce((n,q,i)=>n+(isAnswered(q,state.answers[i])?1:0),0);
-  const wrong=total-correct;
+  const incorrect=answered-correct;
+  const unanswered=total-answered;
+  const flagged=state.flags.filter(Boolean).length;
   const pct=Math.round(correct/total*100);
   const threshold=state.domain.passPercent||72;
   const pass=pct>=threshold;
@@ -1497,13 +418,14 @@ function submitExam(auto){
   results.classList.remove('hidden');
   results.innerHTML=`<button class="btn back-home" id="resultsHome" type="button">← Back to exams</button>
     <div class="review-card">
-      <div class="muted">${state.domain.title}</div>
-      <div class="score-big ${pass?'pass':'fail'}">${pass?'PASS':'FAIL'}</div>
-      <div class="muted">${auto?'Time expired. Exam submitted automatically.':'Exam submitted.'}</div>
+      <div class="results-hero"><div><div class="results-eyebrow">${state.domain.title} / RESULTS</div>
+      <div class="score-big ${pass?'pass':'fail'}">${pass?'Practice target reached':'Keep building'}</div>
+      <div class="muted">${auto?'Time expired. Exam submitted automatically.':'Exam submitted.'}</div></div><div class="score-orbit" style="--score:${pct}%" aria-label="Score ${pct} percent"><span>${pct}%</span></div></div>
       <div class="stats">
         <div class="stat"><span class="muted">Correct</span><b>${correct}/${total}</b></div>
-        <div class="stat"><span class="muted">Incorrect</span><b>${wrong}</b></div>
-        <div class="stat"><span class="muted">Answered</span><b>${answered}/${total}</b></div>
+        <div class="stat"><span class="muted">Incorrect</span><b>${incorrect}</b></div>
+        <div class="stat"><span class="muted">Unanswered</span><b>${unanswered}</b></div>
+        <div class="stat"><span class="muted">Flagged</span><b>${flagged}</b></div>
         <div class="stat"><span class="muted">Score</span><b>${pct}%</b></div>
       </div>
       <div class="note">Practice threshold: ${threshold}%. This is not the AWS scaled-score formula.</div>
@@ -1521,6 +443,34 @@ function submitExam(auto){
   document.getElementById('resultsHome').addEventListener('click',showLanding);
   window.scrollTo({top:0,behavior:'smooth'});
 }
+</script><script>
+// Decorative behavior is deliberately isolated from exam state and scoring.
+(() => {
+  const hero=document.querySelector('.app-hero');
+  const art=document.querySelector('.hero-art');
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)');
+  let frame=0;
+  document.addEventListener('visibilitychange',()=>document.body.classList.toggle('decor-paused',document.hidden));
+  if(!finePointer.matches)return;
+  hero.addEventListener('pointermove',event=>{
+    if(reduced.matches||document.hidden)return;
+    if(frame)cancelAnimationFrame(frame);
+    const bounds=hero.getBoundingClientRect();
+    const x=((event.clientX-bounds.left)/bounds.width-.5)*10;
+    const y=((event.clientY-bounds.top)/bounds.height-.5)*10;
+    frame=requestAnimationFrame(()=>{
+      art.style.setProperty('--parallax-x',`${x.toFixed(1)}px`);
+      art.style.setProperty('--parallax-y',`${y.toFixed(1)}px`);
+      frame=0;
+    });
+  },{passive:true});
+  hero.addEventListener('pointerleave',()=>{
+    if(frame)cancelAnimationFrame(frame);
+    art.style.removeProperty('--parallax-x');
+    art.style.removeProperty('--parallax-y');
+  });
+})();
 </script><script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {

@@ -13,7 +13,8 @@ An interactive, browser-based study environment for the **AWS Certified AI Pract
 - Optional instant answer feedback after a completed question; the preference persists in your browser
 - Correct-answer explanations, reasons for the other options, decisive clues, exam tips, final score, and full answer review
 - Responsive layout, PWA manifest, and service-worker caching for previously loaded assets
-- Subtle press, navigation, and answer-feedback animations with reduced-motion support
+- Orbital science-inspired visual system with restrained ambient motion and reduced-motion support
+- Visual answer states, answered-question progress, and a focused results summary
 
 ## Question library
 
@@ -69,7 +70,8 @@ Open <http://localhost:8000>. A local HTTP server is preferable to opening `inde
 
 ```text
 aif-c01-exam-reviewer/
-├── index.html                 # UI, styling, and reviewer logic
+├── index.html                 # UI and reviewer logic
+├── styles.css                 # Design tokens, layout, states, and motion
 ├── exams/
 │   ├── domain-1.js ... domain-5.js
 │   └── mock-exam-1.js ... mock-exam-5.js
@@ -80,7 +82,7 @@ aif-c01-exam-reviewer/
 └── .nojekyll                  # GitHub Pages serves files without Jekyll
 ```
 
-The implementation uses **HTML, CSS, and vanilla JavaScript**. It has no build step or framework. The service worker and manifest support installation and caching; `localStorage` saves the immediate-feedback preference.
+The implementation uses **HTML, CSS, and vanilla JavaScript**. It has no build step or framework. The service worker and manifest support installation and caching; `localStorage` saves the immediate-feedback preference. Decorative motion pauses while the document is hidden, and the layout respects the user's reduced-motion setting.
 
 ### Add a mock exam
 
