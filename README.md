@@ -82,7 +82,7 @@ aif-c01-exam-reviewer/
 └── .nojekyll                  # GitHub Pages serves files without Jekyll
 ```
 
-The implementation uses **HTML, CSS, and vanilla JavaScript**. It has no build step or framework. The service worker and manifest support installation and caching; `localStorage` saves the immediate-feedback preference. Decorative motion pauses while the document is hidden, and the layout respects the user's reduced-motion setting.
+The implementation uses **HTML, CSS, and vanilla JavaScript**. It has no build step or framework. The service worker caches static assets for offline use and checks the network first for page navigation, so new deployments can appear without serving an old cached home page. `localStorage` saves the immediate-feedback preference. Decorative motion pauses while the document is hidden, and the layout respects the user's reduced-motion setting.
 
 ### Add a mock exam
 
