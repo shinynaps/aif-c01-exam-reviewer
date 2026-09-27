@@ -76,6 +76,15 @@ body:before{
   box-shadow:0 0 0 42px rgba(53,213,229,.025),0 0 0 88px rgba(255,153,0,.018);
   pointer-events:none;
 }
+.reviewer-mark{
+  display:block;
+  width:96px;
+  height:96px;
+  flex:0 0 auto;
+  filter:drop-shadow(0 10px 18px rgba(0,0,0,.25));
+}
+@media(max-width:1023px){.reviewer-mark{width:88px;height:88px}}
+@media(max-width:639px){.reviewer-mark{width:72px;height:72px}}
 .cert-badge{
   position:relative;
   width:112px;
@@ -1061,13 +1070,7 @@ body:before{
 </style>  <link rel="manifest" href="./manifest.webmanifest">
   <meta name="theme-color" content="#081423">
 </head><body><div class="shell"><header class="app-hero" aria-labelledby="appTitle">
-  <div class="cert-badge" aria-hidden="true">
-    <div class="cert-badge-inner">
-      <span class="cert-code">AIF-C01</span>
-      <span class="cert-name">AI Practitioner</span>
-      <span class="cert-accent"></span>
-    </div>
-  </div>
+  <img class="reviewer-mark" src="./assets/reviewer-mark.svg" alt="" width="96" height="96">
   <div class="hero-copy">
     <div class="hero-pill">AIF-C01 • EXAM PREP</div>
     <h1 id="appTitle">AIF-C01: Exam Reviewer</h1>
