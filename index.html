@@ -6,7 +6,7 @@
 <header class="app-hero" aria-labelledby="appTitle">
   <div class="hero-copy">
     <div class="hero-identity"><img class="reviewer-mark" src="./assets/reviewer-mark.svg" alt="" width="42" height="42"><span>AIF-C01 / FIELD GUIDE</span></div>
-    <p class="hero-eyebrow">AWS CERTIFIED AI PRACTITIONER</p>
+    <p class="hero-eyebrow">AWS CERTIFIED AI PRACTITIONER · EXAM REVIEWER</p>
     <h1 id="appTitle">Explore AI.<br><em>Practice with purpose.</em></h1>
     <p class="hero-subtitle">A focused exam reviewer for learning the concepts, spotting the clues, and building confidence one question at a time.</p>
     <div class="hero-actions"><a class="btn primary hero-action" href="#domainSectionTitle">Explore practice sets <span aria-hidden="true">↗</span></a><span class="hero-caption">Five domains · Five full mock exams</span></div>
@@ -82,11 +82,11 @@ const domainDescriptions={
   3:'Apply foundation models through prompt engineering, RAG, customization, model selection, and evaluation techniques.',
   4:'Recognize fairness, transparency, explainability, safety, inclusivity, and other responsible AI considerations.',
   5:'Review AI security controls, data protection, governance, compliance, auditability, and AWS security services.',
-  'mock-exam-1':'A full-length mixed-domain AIF-C01 practice exam using the imported 65-question source set.',
-  'mock-exam-2':'A second full-length 65-question AIF-C01 practice exam with detailed answer explanations and exam clues.',
-  'mock-exam-3':'A third mixed-domain 65-question exam with worked explanations, decisive clues, and review tips.',
-  'mock-exam-4':'A fourth full-length exam covering AI, generative AI, foundation models, responsible AI, and security.',
-  'mock-exam-5':'A fifth full-length exam with extra focus on LLM-as-a-judge, responsible AI, and governance.'
+  'mock-exam-1':'Work through a full-length mix of questions from all five domains.',
+  'mock-exam-2':'Practice a fresh set of scenarios with detailed explanations and exam clues.',
+  'mock-exam-3':'Test your understanding with mixed scenarios and practical review tips.',
+  'mock-exam-4':'Connect AI, foundation models, responsible AI, and security in one timed run.',
+  'mock-exam-5':'Focus on model evaluation, responsible AI, and governance alongside the core topics.'
 };
 const domainIcons={
   1:`<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="17" r="2"/><path d="M7.7 8.1 10.6 15M16.3 8.1 13.4 15M8 7h8"/></svg>`,
@@ -136,6 +136,7 @@ function startExam(id){
   state.flags=d.questions.map(()=>false);
   state.remaining=d.durationSeconds||2400;
   state.instantFeedback=instantFeedbackToggle.checked;
+  document.body.classList.add('in-exam');
   landing.classList.add('hidden');
   results.classList.add('hidden');
   exam.classList.remove('hidden');
@@ -368,6 +369,7 @@ function openSubmitReview(){
 returnToExam.addEventListener('click',()=>{submitReviewPanel.classList.add('hidden');exam.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})});
 confirmSubmit.addEventListener('click',()=>{submitReviewPanel.classList.add('hidden');submitExam(false)});function showLanding(){
   clearInterval(state.timerId);
+  document.body.classList.remove('in-exam');
   state.domain=null;
   state.index=0;
   state.answers=[];
@@ -419,7 +421,7 @@ function submitExam(auto){
   results.innerHTML=`<button class="btn back-home" id="resultsHome" type="button">← Back to exams</button>
     <div class="review-card">
       <div class="results-hero"><div><div class="results-eyebrow">${state.domain.title} / RESULTS</div>
-      <div class="score-big ${pass?'pass':'fail'}">${pass?'Practice target reached':'Keep building'}</div>
+      <div class="score-big ${pass?'pass':'fail'}">${pass?'Pass · Practice target reached':'Below target · Keep building'}</div>
       <div class="muted">${auto?'Time expired. Exam submitted automatically.':'Exam submitted.'}</div></div><div class="score-orbit" style="--score:${pct}%" aria-label="Score ${pct} percent"><span>${pct}%</span></div></div>
       <div class="stats">
         <div class="stat"><span class="muted">Correct</span><b>${correct}/${total}</b></div>

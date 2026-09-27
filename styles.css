@@ -19,6 +19,7 @@ a {color:inherit}
 .hidden {display:none!important}
 h1,h2,h3,h4,h5,p {margin-top:0}
 .shell {position:relative;z-index:1;width:min(100% - 48px,1240px);margin:0 auto;padding:30px 0 72px}
+.in-exam .app-hero {display:none}
 .muted {color:var(--text-muted)}
 .ambient {position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0;background:radial-gradient(circle at 70% 3%,#142c48 0,transparent 42%),radial-gradient(circle at 10% 58%,#0b2a3c 0,transparent 32%),var(--page)}
 .ambient-glow {position:absolute;inset:-15%;background:radial-gradient(circle at 76% 12%,rgba(77,194,211,.12),transparent 25%),radial-gradient(circle at 10% 64%,rgba(255,173,53,.045),transparent 27%);animation:atmosphere 36s ease-in-out infinite alternate}
@@ -163,6 +164,7 @@ body.decor-paused .ambient-glow,body.decor-paused .ambient-stars,body.decor-paus
 /* Results and answer review */
 #submitReviewPanel {padding-bottom:48px}.review-card {padding:27px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,#19334c,#10263d);margin-bottom:22px}.review-card h2 {font-size:1.5rem;margin-bottom:4px}.review-card .controls {justify-content:flex-end}
 .results-hero {display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;overflow:hidden}
+.results-hero .score-big {font-size:clamp(1.8rem,3vw,2.8rem);max-width:20ch}
 .results-eyebrow {font-size:.74rem;letter-spacing:.14em;color:var(--cyan);font-weight:800;text-transform:uppercase;margin-bottom:9px}
 .score-big {font-size:clamp(2.3rem,5vw,4rem);line-height:1.05;font-weight:900;letter-spacing:-.05em}.pass {color:var(--green)}.fail {color:var(--orange)}
 .score-orbit {--score:0%;width:124px;height:124px;display:grid;place-items:center;flex:none;border-radius:50%;background:conic-gradient(var(--green) var(--score),#28455d 0);box-shadow:0 0 0 10px rgba(101,222,228,.045);animation:scorePop var(--deliberate) var(--ease) both}
