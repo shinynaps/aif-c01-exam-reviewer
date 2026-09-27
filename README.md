@@ -6,13 +6,14 @@ An interactive, browser-based study environment for the **AWS Certified AI Pract
 
 ## Features
 
-- Five domain-specific practice sets and four 65-question mixed-domain mock exams
+- Five domain-specific practice sets and five 65-question mixed-domain mock exams
 - 90-minute timer and a 72% **practice** threshold for each full mock
 - Single-answer, multiple-response, and matching questions where included in a set
 - Question palette, Previous/Next navigation, flag for review, and submission review
 - Optional instant answer feedback after a completed question; the preference persists in your browser
 - Correct-answer explanations, reasons for the other options, decisive clues, exam tips, final score, and full answer review
 - Responsive layout, PWA manifest, and service-worker caching for previously loaded assets
+- Subtle press, navigation, and answer-feedback animations with reduced-motion support
 
 ## Question library
 
@@ -27,9 +28,10 @@ An interactive, browser-based study environment for the **AWS Certified AI Pract
 | Mock Exam 2 | 65 |
 | Mock Exam 3 | 65 |
 | Mock Exam 4 | 65 |
-| **Total** | **385** |
+| Mock Exam 5 | 65 |
+| **Total** | **450** |
 
-These counts were checked against the loaded JavaScript question arrays. Mock Exam 4 displays the supplied source questions numbered **1–65** inside the reviewer, regardless of their numbering in the source collection.
+These counts were checked against the loaded JavaScript question arrays. Each mock displays questions **1–65** within its own exam. Mock Exam 5 adapts 22 of the supplied questions numbered 196–233 and adds 43 original questions to strengthen LLM-as-a-judge, responsible AI, and governance coverage. Source numbers are tracked in each question record; they are not displayed as exam question numbers.
 
 ## Exam domains
 
@@ -70,7 +72,7 @@ aif-c01-exam-reviewer/
 ├── index.html                 # UI, styling, and reviewer logic
 ├── exams/
 │   ├── domain-1.js ... domain-5.js
-│   └── mock-exam-1.js ... mock-exam-4.js
+│   └── mock-exam-1.js ... mock-exam-5.js
 ├── sw.js                      # Cache version, precache list, and fetch handling
 ├── manifest.webmanifest       # PWA metadata
 ├── ANSWER-KEY-AUDIT.md        # Validation history and corrections
@@ -82,7 +84,7 @@ The implementation uses **HTML, CSS, and vanilla JavaScript**. It has no build s
 
 ### Add a mock exam
 
-1. Create `exams/mock-exam-5.js` with a `window.aifExamData.mockExam5` object. Follow an existing file's question schema, zero-based `ans` indexes, and `type: 'matching'` mapping for hotspots.
+1. Create the next `exams/mock-exam-N.js` with a `window.aifExamData.mockExamN` object. Follow an existing file's question schema, zero-based `ans` indexes, and `type: 'matching'` mapping for hotspots.
 2. Add its script after the other mock scripts in `index.html`, register the object in `domains`, and add `domainDescriptions` and `domainIcons` entries.
 3. Add the script to `ASSETS` in `sw.js` and bump the cache name so existing clients get the update.
 4. Update this inventory and [the answer-key audit](./ANSWER-KEY-AUDIT.md). Validate every answer index, selection count, matching row, rationale, clue, tip, question total, and UI flow before publishing.

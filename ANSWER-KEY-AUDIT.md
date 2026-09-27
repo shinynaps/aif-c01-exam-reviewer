@@ -224,3 +224,21 @@ https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/aif-01-r
 ## Third-party question note
 
 Mock Exam 1 and Mock Exam 2 contain questions imported from a third-party source supplied by the reviewer owner. They are **not presented as official AWS certification questions**. Where the source wording or answer set conflicted with current AWS terminology or could teach an incorrect exam rule, the reviewer was normalized to the current official AWS documentation instead of preserving the defect verbatim.
+
+## Mock Exam 5 — source and answer audit (2026-09-27)
+
+The owner supplied candidate questions 196–233. The final 65-question exam contains **22 reviewed adaptations** and **43 original replacements**. Existing Mock Exams 1–4 were compared by scenario, clue, answer, and reasoning. Repeated services were allowed when a different distinction was tested. Original questions focus on Bedrock LLM-as-a-judge, fairness, oversight, data protection, and AWS governance controls.
+
+| Disposition | Supplied source numbers | Reason |
+|---|---|---|
+| Adapted and retained | 196–198, 200, 203–205, 207–208, 210, 212–213, 217–224, 227–228 | Distinct or sufficiently differentiated scenarios; answer keys and distractors independently reviewed. |
+| Excluded as repeated or weakly differentiated | 199, 201–202, 206, 209, 211, 214–216, 225–226, 232–233 | Existing exams already test substantially similar clue-to-answer reasoning, or a stronger scenario was used. |
+| Excluded as ambiguous or outside useful exam depth | 229–231 | 229 presents “adversarial prompting” as a single protective technique without specifying the defense; 230 does not define the evaluation task well enough to select a unique accuracy metric; 231 mixes RAG with image-generation sampler parameters. |
+
+**Source 223 correction:** The supplied answer choices did not contain a valid remedy for an SSE-S3 object access failure: `kms:Decrypt` is relevant to SSE-KMS, not SSE-S3. The adapted question now explicitly identifies a denied S3 service role and tests scoped S3 read permission. The explanation contrasts SSE-S3 and SSE-KMS. [S3 GetObject permissions](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html).
+
+**Source 198 correction:** The adapted answer pairs Bedrock Guardrails sensitive-information filtering with a CloudWatch alarm on [published guardrail runtime metrics](https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-guardrails-cw-metrics.html). CloudTrail alone is not an output-content filter.
+
+**LLM-as-a-judge checks:** A generator produces responses and an evaluator scores them. The built-in [Bedrock metrics](https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-metrics.html) distinguish correctness, completeness, faithfulness, relevance, following instructions, logical coherence, style and tone, harmfulness, stereotyping, and refusal. A reference answer can inform correctness; judge scores should be checked against human judgments for consequential use. [Judge evaluation workflow](https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation-judge.html).
+
+The reviewer displays source-derived and original questions as **1–65**, uses zero-based answer indexes, and applies a 90-minute timer and a **72% practice threshold**. The threshold is not AWS’s certification passing-score calculation.
